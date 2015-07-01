@@ -21,6 +21,8 @@ switch($objModulo->getAction()){
 			$sesion['navegador'] = 			$obj->getNavegador();
 			$sesion['sistemaOperativo'] = 	$obj->getSistemaOperativo();
 			$_SESSION[SISTEMA] = $sesion;
+			
+			$obj->setUltimoAcceso();
 		}
 		
 		echo json_encode($result);

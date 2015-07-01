@@ -67,7 +67,7 @@
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Configuración</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Salir</a>
+                        <li><a href="?mod=clogin&action=logout"><i class="fa fa-sign-out fa-fw"></i> Salir</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -83,7 +83,7 @@
                             <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Administración<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="flot.html">Usuarios</a>
+                                    <a href="?mod=admonUsuarios">Usuarios</a>
                                 </li>
                                 <li>
                                     <a href="morris.html">Mi empresa</a>
@@ -143,10 +143,17 @@
 
     <!-- Morris Charts JavaScript -->
     <script src="templates/bower_components/raphael/raphael-min.js"></script>
+    
+    <script src="templates/bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="templates/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
+    <script src="templates/js/tables.es.js"></script>
 
     <!-- Custom Theme JavaScript -->
     <script src="templates/dist/js/sb-admin-2.js"></script>
-
+    
+    {foreach from=$PAGE.scriptsJS item=script}
+		<script type="text/javascript" src="javascript/{$script}"></script>
+	{/foreach}
 </body>
 
 </html>

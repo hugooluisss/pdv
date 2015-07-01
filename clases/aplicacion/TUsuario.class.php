@@ -1,9 +1,11 @@
 <?php
 Class TUsuario{
 	private $idUsuario;
+	private $nombre;
 	private $user;
 	private $pass;
-	private $ultimoAcceso;
+	private $alta;
+	private $ultimoacceso;
 	private $navegador;
 	private $versionNavegador;
 	private $sistemaOperativo;
@@ -68,11 +70,32 @@ Class TUsuario{
 	public function getNombre(){
 		if ($this->getId() == '') return false;
 		
-		return $this->user;
+		return $this->nombre;
+	}
+	
+	public function getNick(){
+		return $this->nick;
 	}
 	
 	public function getId(){
 		return $this->idUsuario;
+	}
+	
+	public function getAlta(){
+		return $this->alta;
+	}
+	
+	public function setUltimoAcceso(){
+		$db = TBase::conectaDB();
+		
+		if ($this->getId() == '') return false;
+		
+		$db->Execute("update usuario set ultimoacceso = now() where idUsuario = ".$this->getId());
+		return true;
+	}
+	
+	public function getUltimoAcceso(){
+		return $this->ultimoacceso;
 	}
 }
 ?>

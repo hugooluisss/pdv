@@ -40,7 +40,7 @@
                         <h3 class="panel-title">Por favor, inicia sesión</h3>
                     </div>
                     <div class="panel-body">
-                        <form role="form" id="frmLogin">
+                        <form role="form" id="frmLogin" onsubmit="javascript: false;" action="#">
                             <fieldset>
                                 <div class="form-group">
                                     <input class="form-control" placeholder="Usuario" id="usuario" type="usuario" autofocus>

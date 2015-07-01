@@ -26,25 +26,26 @@ $conf['clogin'] = array(
 	'seguridad' => false,
 	'capa' => LAYOUT_AJAX);
 	
-
-#Login chat
 $conf['panel'] = array(
-	#'controlador' => 'index.php',
+	'controlador' => 'index.php',
 	'vista' => 'usuarios/panel.tpl',
 	'descripcion' => 'Vista del panel',
 	'seguridad' => true,
-	'js' => array('mensaje.class.js', 'panel.js'),
+	'js' => array(),
 	'capa' => LAYOUT_DEFECTO);
 
-$conf['cchat'] = array(
-	'controlador' => 'chat.php',
-	'descripcion' => 'Control de la sala de chat',
-	'seguridad' => false,
-	'capa' => LAYOUT_AJAX);
-	
-$conf['mensajes'] = array(
-	'controlador' => 'chat.php',
-	'vista' => 'usuarios/mensajes.tpl',
-	'descripcion' => 'Lista de mensajes',
+$conf['admonUsuarios'] = array(
+	'controlador' => 'usuarios.php',
+	'vista' => 'administracion/usuarios/panel.tpl',
+	'descripcion' => 'Administración de usuarios',
 	'seguridad' => true,
-	'capa' => LAYOUT_AJAX);
+	'js' => array('usuarios.js'),
+	'capa' => LAYOUT_DEFECTO);
+	
+$conf['usuarioAdd'] = array(
+	'controlador' => 'usuarios.php',
+	'vista' => 'administracion/usuarios/add.tpl',
+	'descripcion' => 'Administración de usuarios',
+	'seguridad' => true,
+	'js' => array('usuarios.js'),
+	'capa' => LAYOUT_DEFECTO);

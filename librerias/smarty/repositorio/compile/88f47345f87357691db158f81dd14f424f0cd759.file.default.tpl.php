@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2015-06-29 22:36:13
+<?php /* Smarty version Smarty-3.1.11, created on 2015-06-30 23:05:54
          compiled from "templates/plantillas/layout/default.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:86087753755784df4f34a24-17731746%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '88f47345f87357691db158f81dd14f424f0cd759' => 
     array (
       0 => 'templates/plantillas/layout/default.tpl',
-      1 => 1435635372,
+      1 => 1435723509,
       2 => 'file',
     ),
   ),
@@ -20,6 +20,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'variables' => 
   array (
     'PAGE' => 0,
+    'script' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -95,7 +96,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Configuración</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Salir</a>
+                        <li><a href="?mod=clogin&action=logout"><i class="fa fa-sign-out fa-fw"></i> Salir</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -111,7 +112,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                             <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Administración<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="flot.html">Usuarios</a>
+                                    <a href="?mod=admonUsuarios">Usuarios</a>
                                 </li>
                                 <li>
                                     <a href="morris.html">Mi empresa</a>
@@ -172,10 +173,22 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
     <!-- Morris Charts JavaScript -->
     <script src="templates/bower_components/raphael/raphael-min.js"></script>
+    
+    <script src="templates/bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="templates/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
+    <script src="templates/js/tables.es.js"></script>
 
     <!-- Custom Theme JavaScript -->
     <script src="templates/dist/js/sb-admin-2.js"></script>
-
+    
+    <?php  $_smarty_tpl->tpl_vars['script'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['script']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['PAGE']->value['scriptsJS']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['script']->key => $_smarty_tpl->tpl_vars['script']->value){
+$_smarty_tpl->tpl_vars['script']->_loop = true;
+?>
+		<script type="text/javascript" src="javascript/<?php echo $_smarty_tpl->tpl_vars['script']->value;?>
+"></script>
+	<?php } ?>
 </body>
 
 </html>

@@ -36,14 +36,16 @@ includeDir("clases/aplicacion/");
 $objModulo = new TModulo($modulo);
 $bandSesion = true;
 if ($objModulo->requiereSeguridad()){
-	if (!isset($sesion['usuario'])){
+
+	if (!isset($sesion['usuario']) or $sesion['usuario'] == ''){
+		echo $sesion['usuario'];
 		$bandSesion = false;
 		$modulo = MODULO_DEFECTO;
 		unset($objModulo);
 		$objModulo = new TModulo($modulo); 
 	}
 }else
-	$bandSesion = isset($sesion['num_personal']);
+	$bandSesion = isset($sesion['usuario']);
 
 define("DIR_PLANTILLAS", 'templates');
 define('TEMPLATE', DIR_PLANTILLAS.'/plantillas/');

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2015-06-29 22:01:48
+<?php /* Smarty version Smarty-3.1.11, created on 2015-06-30 22:15:01
          compiled from "templates/plantillas/layout/login.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:85112895255920495bf92e1-54682840%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c5b8753aeb60af718a5f9de931383e28721a5592' => 
     array (
       0 => 'templates/plantillas/layout/login.tpl',
-      1 => 1435633307,
+      1 => 1435720500,
       2 => 'file',
     ),
   ),
@@ -68,7 +68,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                         <h3 class="panel-title">Por favor, inicia sesión</h3>
                     </div>
                     <div class="panel-body">
-                        <form role="form" id="frmLogin">
+                        <form role="form" id="frmLogin" onsubmit="javascript: false;" action="#">
                             <fieldset>
                                 <div class="form-group">
                                     <input class="form-control" placeholder="Usuario" id="usuario" type="usuario" autofocus>
