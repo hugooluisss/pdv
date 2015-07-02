@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2015-06-30 23:05:54
+<?php /* Smarty version Smarty-3.1.11, created on 2015-07-02 09:35:26
          compiled from "templates/plantillas/layout/default.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:86087753755784df4f34a24-17731746%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '88f47345f87357691db158f81dd14f424f0cd759' => 
     array (
       0 => 'templates/plantillas/layout/default.tpl',
-      1 => 1435723509,
+      1 => 1435847725,
       2 => 'file',
     ),
   ),
@@ -164,6 +164,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
     <!-- jQuery -->
     <script src="templates/bower_components/jquery/dist/jquery.min.js"></script>
+    
+    <script type="text/javascript" src="templates/js/validate.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="templates/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>

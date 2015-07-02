@@ -134,6 +134,8 @@
 
     <!-- jQuery -->
     <script src="templates/bower_components/jquery/dist/jquery.min.js"></script>
+    
+    <script type="text/javascript" src="templates/js/validate.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="templates/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>

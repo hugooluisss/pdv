@@ -47,5 +47,11 @@ $conf['usuarioAdd'] = array(
 	'vista' => 'administracion/usuarios/add.tpl',
 	'descripcion' => 'Administración de usuarios',
 	'seguridad' => true,
-	'js' => array('usuarios.js'),
+	'js' => array('usuario.class.js', 'usuarios.js'),
 	'capa' => LAYOUT_DEFECTO);
+	
+$conf['cusuario'] = array(
+	'controlador' => 'usuarios.php',
+	'descripcion' => 'Controlador de usuarios',
+	'seguridad' => true,
+	'capa' => LAYOUT_AJAX);

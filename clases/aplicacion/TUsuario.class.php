@@ -9,6 +9,8 @@ Class TUsuario{
 	private $navegador;
 	private $versionNavegador;
 	private $sistemaOperativo;
+	private $idTipoUsuario;
+	private $email;
 	
 	public function TUsuario($id = ''){
 		$this->setId($id);
@@ -67,10 +69,20 @@ Class TUsuario{
 		return $this->navegador;
 	}
 	
+	public function setNombre($val = ''){
+		$this->nombre = $val;
+		return true;
+	}
+	
 	public function getNombre(){
 		if ($this->getId() == '') return false;
 		
 		return $this->nombre;
+	}
+	
+	public function setNick($val = ''){
+		$this->nick = $val;
+		return true;
 	}
 	
 	public function getNick(){
@@ -85,6 +97,16 @@ Class TUsuario{
 		return $this->alta;
 	}
 	
+	public function getIdTipo(){
+		return $this->idTipoUsuario;
+	}
+	
+	public function setTipo($val = 0){
+		$this->idTipoUsuario = $val;
+		
+		return true;
+	}
+	
 	public function setUltimoAcceso(){
 		$db = TBase::conectaDB();
 		
@@ -96,6 +118,42 @@ Class TUsuario{
 	
 	public function getUltimoAcceso(){
 		return $this->ultimoacceso;
+	}
+	
+	public function setEmail($val = ''){
+		$this->email = $val;
+		return true;
+	}
+	
+	public function getEmail(){
+		return $this->email;
+	}
+	
+	public function guardar(){
+		$db = TBase::conectaDB();
+		
+		if ($this->getId() == ''){
+			$rs = $db->Execute("insert into usuario (idUsuario, idTipoUsuario, nombre, nick, pass, alta, ultimoacceso, email) values (null, 0, '', '', '".md5($this->pass)."', now(), null, '')");
+			$this->idUsuario = $db->Insert_ID();
+		}
+		
+		$db->Execute("update usuario set
+				idTipoUsuario = ".$this->getIdTipo().",
+				nombre = '".$this->getNombre()."',
+				nick = '".$this->getNick()."',
+				email = '".$this->getEmail()."'
+			where idUsuario = ".$this->getId());
+			
+		return true;
+	}
+	
+	public function setPass($val = ''){
+		if ($this->getId() == '') return false;
+		
+		$db = TBase::conectaDB();
+		$db->Execute("update usuario set pass = md5('".$val."') where idUsuario = ".$this->getId());
+		
+		return true;
 	}
 }
 ?>
