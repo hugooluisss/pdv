@@ -86,7 +86,7 @@
                                     <a href="?mod=admonUsuarios">Usuarios</a>
                                 </li>
                                 <li>
-                                    <a href="morris.html">Mi empresa</a>
+                                    <a href="?mod=empresa">Mi empresa</a>
                                 </li>
                             </ul>
                         </li>

@@ -55,3 +55,18 @@ $conf['cusuario'] = array(
 	'descripcion' => 'Controlador de usuarios',
 	'seguridad' => true,
 	'capa' => LAYOUT_AJAX);
+	
+/***** Empresa *****/
+$conf['empresa'] = array(
+	'controlador' => 'empresa.php',
+	'vista' => 'administracion/empresa/panel.tpl',
+	'descripcion' => 'Vista del panel',
+	'seguridad' => true,
+	'js' => array('empresa.class.js', 'empresa.js'),
+	'capa' => LAYOUT_DEFECTO);
+	
+$conf['cempresa'] = array(
+	'controlador' => 'empresa.php',
+	'descripcion' => 'Controlador de configuración de la empresa',
+	'seguridad' => true,
+	'capa' => LAYOUT_AJAX);
