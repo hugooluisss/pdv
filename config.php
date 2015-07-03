@@ -118,3 +118,28 @@ $conf['cclientes'] = array(
 	'descripcion' => 'Controlador de clientes',
 	'seguridad' => true,
 	'capa' => LAYOUT_AJAX);
+	
+/********* Departamentos *********/
+
+$conf['departamentos'] = array(
+	'controlador' => 'departamentos.php',
+	'vista' => 'catalogos/departamentos/panel.tpl',
+	'descripcion' => 'Vista del panel',
+	'seguridad' => true,
+	'js' => array('departamento.class.js', 'departamentos.js'),
+	'capa' => LAYOUT_DEFECTO);
+	
+$conf['departamentoAdd'] = array(
+	'controlador' => 'departamentos.php',
+	'vista' => 'catalogos/departamentos/add.tpl',
+	'descripcion' => 'Administración de departamentos',
+	'seguridad' => true,
+	'js' => array('departamento.class.js', 'departamentos.js'),
+	'capa' => LAYOUT_DEFECTO);
+	
+$conf['cdepartamentos'] = array(
+	'controlador' => 'departamentos.php',
+	'descripcion' => 'Controlador de departamentos',
+	'seguridad' => true,
+	'capa' => LAYOUT_AJAX);
+?>

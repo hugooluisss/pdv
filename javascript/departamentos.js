@@ -1,43 +1,36 @@
 $(document).ready(function(){
-	$('#tblClientes').DataTable({
+	$('#tblDepartamentos').DataTable({
 		"responsive": true,
 		"language": espaniol
 	});
 	
 	$("#btnAdd").click(function(){
-		location.href = "?mod=clienteAdd";
+		location.href = "?mod=departamentoAdd";
 	});
 	
 	$("#btnReset").click(function(){
-		location.href = "?mod=clientes";
+		location.href = "?mod=departamentos";
 	});
 	
 	$("#frmAdd").validate({
 		debug: true,
 		rules: {
 			txtNombre: "required",
-			txtEmail: {
-				email: true
-			}
 		},
 		errorLabelContainer: $("ol", $("div.errores")),
 		wrapper: 'li', 
 		messages: {
-			txtEmail: "No es una dirección de correo válida",
-			txtNombre: "El nombre del cliente es necesario",
+			txtNombre: "El nombre del departamento es necesario",
 		},
 		submitHandler: function(form){
-			var obj = new TCliente;
+			var obj = new TDepartamento;
 			obj.add(
 				$('#id').val(),
 				$('#txtNombre').val(),
-				$('#selSexo').val(),
-				$('#txtTelefono').val(),
-				$('#txtEmail').val(),
-				$('#txtDireccion').val(),
-				$('#txtComentarios').val(),{
+				$('#txtDescripcion').val(),
+				{
 					ok: function(data){
-						location.href = "?mod=clientes";
+						location.href = "?mod=departamentos";
 					},
 					error: function(){
 						$("#txtNombre").focus();
@@ -48,13 +41,13 @@ $(document).ready(function(){
     });
     
     $("[action=modificar]").click(function(){
-    	location.href = "?mod=clienteAdd&id=" + $(this).attr("cliente");
+    	location.href = "?mod=departamentoAdd&id=" + $(this).attr("departamento");
     });
     
     $("[action=eliminar]").click(function(){
     	if(confirm("¿Seguro?")){
-	    	var obj = new TCliente;
-	    	obj.del($(this).attr("cliente"), {ok: function(){
+	    	var obj = new TDepartamento;
+	    	obj.del($(this).attr("departamento"), {ok: function(){
 		    	location.reload();
 	    	}});
     	}

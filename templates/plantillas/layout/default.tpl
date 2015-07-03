@@ -99,6 +99,9 @@
                                 <li>
                                     <a href="?mod=clientes">Clientes</a>
                                 </li>
+                                <li>
+                                    <a href="?mod=departamentos">Departamentos</a>
+                                </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
