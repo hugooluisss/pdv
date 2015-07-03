@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2015-07-02 22:53:20
+<?php /* Smarty version Smarty-3.1.11, created on 2015-07-03 08:49:55
          compiled from "templates/plantillas/layout/default.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:86087753755784df4f34a24-17731746%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '88f47345f87357691db158f81dd14f424f0cd759' => 
     array (
       0 => 'templates/plantillas/layout/default.tpl',
-      1 => 1435895598,
+      1 => 1435931391,
       2 => 'file',
     ),
   ),
@@ -123,7 +123,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                             <a href="#"><i class="fa fa-table fa-fw"></i> Catálogos<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="?mod=articulos">Artículos</a>
+                                    <a href="?mod=proveedores">Proveedores</a>
                                 </li>
                                 <li>
                                     <a href="morris.html">Clientes</a>

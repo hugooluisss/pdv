@@ -71,12 +71,26 @@ $conf['cempresa'] = array(
 	'seguridad' => true,
 	'capa' => LAYOUT_AJAX);
 
-/********* Artículos *********/
+/********* Proveedores *********/
 
-$conf['articulos'] = array(
-	//'controlador' => 'empresa.php',
-	'vista' => 'catalogos/articulos/panel.tpl',
+$conf['proveedores'] = array(
+	'controlador' => 'proveedores.php',
+	'vista' => 'catalogos/proveedores/panel.tpl',
 	'descripcion' => 'Vista del panel',
 	'seguridad' => true,
-	'js' => array(),
+	'js' => array('proveedor.class.js', 'proveedores.js'),
 	'capa' => LAYOUT_DEFECTO);
+	
+$conf['proveedorAdd'] = array(
+	'controlador' => 'proveedores.php',
+	'vista' => 'catalogos/proveedores/add.tpl',
+	'descripcion' => 'Administración de proveedores',
+	'seguridad' => true,
+	'js' => array('proveedor.class.js', 'proveedores'),
+	'capa' => LAYOUT_DEFECTO);
+	
+$conf['cproveedor'] = array(
+	'controlador' => 'proveedores.php',
+	'descripcion' => 'Controlador de proveedores',
+	'seguridad' => true,
+	'capa' => LAYOUT_AJAX);
