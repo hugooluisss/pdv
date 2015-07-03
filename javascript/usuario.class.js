@@ -29,5 +29,17 @@ TUsuario = function(){
 				fn.ok(data);
 			}
 		}, "json");
+	};
+	
+	this.del = function(usuario, fn){
+		$.post('?mod=cusuario&action=del', {
+			"usuario": usuario,
+		}, function(data){
+			if (data.band == 'false'){
+				alert("Ocurrió un error al eliminar al usuario");
+			}else{
+				fn.ok(data);
+			}
+		}, "json");
 	}
 };

@@ -29,7 +29,7 @@
 					<td>{$row.ultimoacceso}</td>
 					<td style="text-align: right">
 						<button type="button" class="btn btn-warning btn-circle" action="modificar" usuario="{$row.encriptado.idUsuario}" title="Modificar"><i class="fa fa-pencil"></i></button>
-						<button type="button" class="btn btn-danger btn-circle" title="Eliminar"><i class="fa fa-times"></i></button>
+						<button type="button" class="btn btn-danger btn-circle" action="eliminar" title="Eliminar" usuario="{$row.encriptado.idUsuario}"><i class="fa fa-times"></i></button>
 					</td>
 				</tr>
 			{/foreach}

@@ -5,7 +5,7 @@ switch($objModulo->getId()){
 	case 'admonUsuarios':
 	case 'listaUsuarios':
 		$db = TBase::conectaDB();
-		$rs = $db->Execute("select idUsuario from usuario");
+		$rs = $db->Execute("select idUsuario from usuario where estado = 'A'");
 		$datos = array();
 		while(!$rs->EOF){
 			$obj = new TUsuario($rs->fields['idUsuario']);
@@ -26,7 +26,7 @@ switch($objModulo->getId()){
 	break;
 	case 'usuarioAdd':
 		$db = TBase::conectaDB();
-		$rs = $db->Execute("select * from tipoUsuario");
+		$rs = $db->Execute("select * from tipousuario");
 		$datos = array();
 		while(!$rs->EOF){
 			array_push($datos, $rs->fields);
@@ -85,6 +85,15 @@ switch($objModulo->getId()){
 				$obj = new TUsuario($_POST['usuario']);
 				
 				if ($obj->setPass($_POST['pass']))
+					echo json_encode(array("band" => "true"));
+				else
+					echo json_encode(array("band" => "false"));
+
+			break;
+			case 'del':
+				$obj = new TUsuario(hexdec($_POST['usuario']));
+				
+				if ($obj->delete())
 					echo json_encode(array("band" => "true"));
 				else
 					echo json_encode(array("band" => "false"));

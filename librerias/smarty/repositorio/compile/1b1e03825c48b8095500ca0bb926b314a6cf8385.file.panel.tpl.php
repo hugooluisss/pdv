@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2015-07-02 13:43:49
+<?php /* Smarty version Smarty-3.1.11, created on 2015-07-02 22:09:15
          compiled from "templates/plantillas/modulos/administracion/usuarios/panel.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:51314196655935d5109ae64-08576149%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '1b1e03825c48b8095500ca0bb926b314a6cf8385' => 
     array (
       0 => 'templates/plantillas/modulos/administracion/usuarios/panel.tpl',
-      1 => 1435862596,
+      1 => 1435892461,
       2 => 'file',
     ),
   ),
@@ -64,7 +64,8 @@ $_smarty_tpl->tpl_vars['row']->_loop = true;
 					<td style="text-align: right">
 						<button type="button" class="btn btn-warning btn-circle" action="modificar" usuario="<?php echo $_smarty_tpl->tpl_vars['row']->value['encriptado']['idUsuario'];?>
 " title="Modificar"><i class="fa fa-pencil"></i></button>
-						<button type="button" class="btn btn-danger btn-circle" title="Eliminar"><i class="fa fa-times"></i></button>
+						<button type="button" class="btn btn-danger btn-circle" action="eliminar" title="Eliminar" usuario="<?php echo $_smarty_tpl->tpl_vars['row']->value['encriptado']['idUsuario'];?>
+"><i class="fa fa-times"></i></button>
 					</td>
 				</tr>
 			<?php } ?>

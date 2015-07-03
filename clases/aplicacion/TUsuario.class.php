@@ -11,6 +11,7 @@ Class TUsuario{
 	private $sistemaOperativo;
 	private $idTipoUsuario;
 	private $email;
+	private $estado;
 	
 	public function TUsuario($id = ''){
 		$this->setId($id);
@@ -152,6 +153,15 @@ Class TUsuario{
 		
 		$db = TBase::conectaDB();
 		$db->Execute("update usuario set pass = md5('".$val."') where idUsuario = ".$this->getId());
+		
+		return true;
+	}
+	
+	public function delete(){
+		if ($this->getId() == '') return false;
+		
+		$db = TBase::conectaDB();
+		$db->Execute("update usuario set estado = 'E' where idUsuario = ".$this->getId());
 		
 		return true;
 	}

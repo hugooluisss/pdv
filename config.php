@@ -39,7 +39,7 @@ $conf['admonUsuarios'] = array(
 	'vista' => 'administracion/usuarios/panel.tpl',
 	'descripcion' => 'Administración de usuarios',
 	'seguridad' => true,
-	'js' => array('usuarios.js'),
+	'js' => array('usuario.class.js', 'usuarios.js'),
 	'capa' => LAYOUT_DEFECTO);
 	
 $conf['usuarioAdd'] = array(

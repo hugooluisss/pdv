@@ -93,4 +93,14 @@ $(document).ready(function(){
     $("[action=modificar]").click(function(){
     	location.href = "?mod=usuarioAdd&id=" + $(this).attr("usuario");
     });
+    
+    $("[action=eliminar]").click(function(){
+    	if(confirm("¿Seguro?")){
+	    	var obj = new TUsuario;
+	    	obj.del($(this).attr("usuario"), {ok: function(){
+		    	location.reload();
+	    	}});
+    	}
+    		
+    });
 });
