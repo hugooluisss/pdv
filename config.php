@@ -94,3 +94,27 @@ $conf['cproveedor'] = array(
 	'descripcion' => 'Controlador de proveedores',
 	'seguridad' => true,
 	'capa' => LAYOUT_AJAX);
+	
+/********* Clientes *********/
+
+$conf['clientes'] = array(
+	'controlador' => 'clientes.php',
+	'vista' => 'catalogos/clientes/panel.tpl',
+	'descripcion' => 'Vista del panel',
+	'seguridad' => true,
+	'js' => array('cliente.class.js', 'clientes.js'),
+	'capa' => LAYOUT_DEFECTO);
+	
+$conf['clienteAdd'] = array(
+	'controlador' => 'clientes.php',
+	'vista' => 'catalogos/clientes/add.tpl',
+	'descripcion' => 'Administración de clientes',
+	'seguridad' => true,
+	'js' => array('cliente.class.js', 'clientes.js'),
+	'capa' => LAYOUT_DEFECTO);
+	
+$conf['cclientes'] = array(
+	'controlador' => 'clientes.php',
+	'descripcion' => 'Controlador de clientes',
+	'seguridad' => true,
+	'capa' => LAYOUT_AJAX);

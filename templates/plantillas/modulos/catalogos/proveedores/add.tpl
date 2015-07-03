@@ -36,15 +36,15 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="txtTelefono1" class="col-lg-2 control-label">Teléfono</label>
+				<label for="txtTelefono" class="col-lg-2 control-label">Teléfono</label>
 				<div class="col-lg-3">
-					<input class="form-control" id="txtTelefono1" type="text" name="txtTelefono1" autocomplete="off" placeholder="Teléfono" value="{$proveedor->getTelefono()}"/>
+					<input class="form-control" id="txtTelefono" type="text" name="txtTelefono" autocomplete="off" placeholder="Teléfono" value="{$proveedor->getTelefono()}"/>
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="txtCuenta1" class="col-lg-2 control-label">Cuenta bancaria</label>
+				<label for="txtCuenta" class="col-lg-2 control-label">Cuenta bancaria</label>
 				<div class="col-lg-3">
-					<input class="form-control" id="txtCuenta1" type="text" name="txtCuenta1" autocomplete="off" placeholder="Cuenta bancaria" value="{$proveedor->getCuenta()}"/>
+					<input class="form-control" id="txtCuenta" type="text" name="txtCuenta" autocomplete="off" placeholder="Cuenta bancaria" value="{$proveedor->getCuenta()}"/>
 				</div>
 			</div>
 			<hr />

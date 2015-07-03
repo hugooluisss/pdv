@@ -97,7 +97,7 @@
                                     <a href="?mod=proveedores">Proveedores</a>
                                 </li>
                                 <li>
-                                    <a href="morris.html">Clientes</a>
+                                    <a href="?mod=clientes">Clientes</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->

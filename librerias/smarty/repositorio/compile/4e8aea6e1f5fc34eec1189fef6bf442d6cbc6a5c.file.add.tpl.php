@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2015-07-03 11:33:58
+<?php /* Smarty version Smarty-3.1.11, created on 2015-07-03 12:50:51
          compiled from "templates/plantillas/modulos/catalogos/proveedores/add.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2265511065596959ede9526-90452975%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '4e8aea6e1f5fc34eec1189fef6bf442d6cbc6a5c' => 
     array (
       0 => 'templates/plantillas/modulos/catalogos/proveedores/add.tpl',
-      1 => 1435941237,
+      1 => 1435944280,
       2 => 'file',
     ),
   ),
@@ -65,16 +65,16 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="txtTelefono1" class="col-lg-2 control-label">Teléfono</label>
+				<label for="txtTelefono" class="col-lg-2 control-label">Teléfono</label>
 				<div class="col-lg-3">
-					<input class="form-control" id="txtTelefono1" type="text" name="txtTelefono1" autocomplete="off" placeholder="Teléfono" value="<?php echo $_smarty_tpl->tpl_vars['proveedor']->value->getTelefono();?>
+					<input class="form-control" id="txtTelefono" type="text" name="txtTelefono" autocomplete="off" placeholder="Teléfono" value="<?php echo $_smarty_tpl->tpl_vars['proveedor']->value->getTelefono();?>
 "/>
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="txtCuenta1" class="col-lg-2 control-label">Cuenta bancaria</label>
+				<label for="txtCuenta" class="col-lg-2 control-label">Cuenta bancaria</label>
 				<div class="col-lg-3">
-					<input class="form-control" id="txtCuenta1" type="text" name="txtCuenta1" autocomplete="off" placeholder="Cuenta bancaria" value="<?php echo $_smarty_tpl->tpl_vars['proveedor']->value->getCuenta();?>
+					<input class="form-control" id="txtCuenta" type="text" name="txtCuenta" autocomplete="off" placeholder="Cuenta bancaria" value="<?php echo $_smarty_tpl->tpl_vars['proveedor']->value->getCuenta();?>
 "/>
 				</div>
 			</div>

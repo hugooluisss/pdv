@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2015-07-03 08:49:55
+<?php /* Smarty version Smarty-3.1.11, created on 2015-07-03 12:48:00
          compiled from "templates/plantillas/layout/default.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:86087753755784df4f34a24-17731746%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '88f47345f87357691db158f81dd14f424f0cd759' => 
     array (
       0 => 'templates/plantillas/layout/default.tpl',
-      1 => 1435931391,
+      1 => 1435945180,
       2 => 'file',
     ),
   ),
@@ -126,7 +126,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                                     <a href="?mod=proveedores">Proveedores</a>
                                 </li>
                                 <li>
-                                    <a href="morris.html">Clientes</a>
+                                    <a href="?mod=clientes">Clientes</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
