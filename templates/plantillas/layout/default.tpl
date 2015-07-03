@@ -94,7 +94,7 @@
                             <a href="#"><i class="fa fa-table fa-fw"></i> Catálogos<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="flot.html">Artículos</a>
+                                    <a href="?mod=articulos">Artículos</a>
                                 </li>
                                 <li>
                                     <a href="morris.html">Clientes</a>

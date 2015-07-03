@@ -70,3 +70,13 @@ $conf['cempresa'] = array(
 	'descripcion' => 'Controlador de configuración de la empresa',
 	'seguridad' => true,
 	'capa' => LAYOUT_AJAX);
+
+/********* Artículos *********/
+
+$conf['articulos'] = array(
+	//'controlador' => 'empresa.php',
+	'vista' => 'catalogos/articulos/panel.tpl',
+	'descripcion' => 'Vista del panel',
+	'seguridad' => true,
+	'js' => array(),
+	'capa' => LAYOUT_DEFECTO);
