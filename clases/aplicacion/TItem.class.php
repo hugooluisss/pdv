@@ -7,6 +7,7 @@ Class TItem{
 	private $idTipoItem;
 	private $fechaAlta;
 	private $ultimaACtualizacion;
+	private $estado;
 	
 	function TItem($id = ''){
 		if ($id <> '') $this->setId($id);
@@ -33,7 +34,7 @@ Class TItem{
 	}
 	
 	public function setIdTipo($val = 1){
-		$this->idTipo = 1;
+		$this->idTipo = $val;
 	}
 	
 	public function getIdTipo(){
@@ -41,7 +42,7 @@ Class TItem{
 	}
 	
 	public function setCodigo($val = ''){
-		$this->codigo = $val;
+		$this->codigo = strtoupper($val);
 		
 		return true;
 	}
@@ -103,7 +104,8 @@ Class TItem{
 	public function eliminar(){
 		if ($this->getId() == '') return false;
 		
-		$rs = $db->Execute("delete from item where idItem = ".$this->getId());
+		$db = TBase::conectaDB();
+		$rs = $db->Execute("update item set estado = 'E' where idItem = ".$this->getId());
 		
 		return $rs?true:false;
 	}

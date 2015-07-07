@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2015-07-06 23:24:56
+<?php /* Smarty version Smarty-3.1.11, created on 2015-07-07 16:58:11
          compiled from "templates/plantillas/modulos/inventario/productos/add.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1599643558559b2ef43efae8-50417298%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c5b10df6a70777b38b57538122650938e2b86c45' => 
     array (
       0 => 'templates/plantillas/modulos/inventario/productos/add.tpl',
-      1 => 1436243093,
+      1 => 1436306285,
       2 => 'file',
     ),
   ),
@@ -88,6 +88,20 @@ $_smarty_tpl->tpl_vars['row']->_loop = true;
 				<label for="txtPU" class="col-lg-2 control-label">Precio unitario</label>
 				<div class="col-lg-2">
 					<input class="form-control" id="txtPU" type="text" name="txtPU" autocomplete="off" value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['producto']->value->getPrecio())===null||$tmp==='' ? "0.00" : $tmp);?>
+" style="text-align: right"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="txtExistencias" class="col-lg-2 control-label">Existencias</label>
+				<div class="col-lg-2">
+					<input class="form-control" id="txtExistencias" type="text" name="txtExistencias" autocomplete="off" value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['producto']->value->getExistencias())===null||$tmp==='' ? "0" : $tmp);?>
+" style="text-align: right"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="txtMinimo" class="col-lg-2 control-label">Inventario mínimo</label>
+				<div class="col-lg-2">
+					<input class="form-control" id="txtMinimo" type="text" name="txtMinimo" autocomplete="off" value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['producto']->value->getMinimo())===null||$tmp==='' ? "0" : $tmp);?>
 " style="text-align: right"/>
 				</div>
 			</div>

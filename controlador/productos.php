@@ -4,7 +4,7 @@ global $objModulo;
 switch($objModulo->getId()){
 	case 'productos':
 		$db = TBase::conectaDB();
-		$rs = $db->Execute("select idItem from item where idTipoItem = 1");
+		$rs = $db->Execute("select idItem from item where idTipoItem = 1 and estado = 'A'");
 		$datos = array();
 		while(!$rs->EOF){
 			$obj = new TProducto($rs->fields['idItem']);
@@ -12,6 +12,7 @@ switch($objModulo->getId()){
 			$el['codigo'] = $obj->getCodigo();
 			$el['nombre'] = $obj->getNombre();
 			$el['precio'] = $obj->getPrecio();
+			$el['existencias'] = $obj->getExistencias();
 			$el['encriptado']['id'] = dechex($obj->getId());
 			
 			array_push($datos, $el);
@@ -58,16 +59,10 @@ switch($objModulo->getId()){
 				$obj->setImpInc($_POST['impuestoIncluido']);
 				$obj->setImpuesto($_POST['impuesto']);
 				$obj->setMarca($_POST['marca']);
+				$obj->setMinimo($_POST['minimo']);
+				$obj->setExistencias($_POST['existencias']);
 				
 				if ($obj->guardar())
-					echo json_encode(array("band" => "true"));
-				else
-					echo json_encode(array("band" => "false"));
-			break;
-			case 'del':
-				$obj = new TDepartamento(hexdec($_POST['id']));
-				
-				if ($obj->eliminar())
 					echo json_encode(array("band" => "true"));
 				else
 					echo json_encode(array("band" => "false"));

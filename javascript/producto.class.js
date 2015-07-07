@@ -1,7 +1,7 @@
 TProducto = function(){
 	var self = this;
 	
-	this.add = function(id, codigo, nombre, descripcion, departamento, marca, precioUnitario, impuestoIncluido, impuesto, metodoCosteo, costo, fn){
+	this.add = function(id, codigo, nombre, descripcion, departamento, marca, precioUnitario, impuestoIncluido, impuesto, metodoCosteo, costo, minimo, existencias,  fn){
 		$.post('?mod=cproductos&action=guardar', {
 				"id": id,
 				"codigo": codigo,
@@ -13,7 +13,9 @@ TProducto = function(){
 				"impuestoIncluido": impuestoIncluido,
 				"impuesto": impuesto,
 				"metodoCosteo": metodoCosteo,
-				"costo": costo
+				"costo": costo,
+				"minimo": minimo,
+				"existencias": existencias
 			}, function(data) {
 				if (data.band == 'false'){
 					alert(data.mensaje == ''?"Upps. Ocurrió un error al agregar el producto: ":data.mensaje);
@@ -25,9 +27,9 @@ TProducto = function(){
 		);
 	};
 	
-	this.del = function(proveedor, fn){
-		$.post('?mod=cproveedor&action=del', {
-			"id": proveedor,
+	this.del = function(producto, fn){
+		$.post('?mod=citems&action=del', {
+			"id": producto,
 		}, function(data){
 			if (data.band == 'false'){
 				alert("Ocurrió un error al eliminar el producto");

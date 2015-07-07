@@ -1,0 +1,24 @@
+<b style="color:RED;">Error del Usuario</b><strong> Error en la linea <span style="color:BLUE">77</span> del archivo <span style="color:BLUE">/Library/WebServer/Documents/pdv/librerias/adodb/adodb-errorhandler.inc.php - MOD: cservicios,</span> el dia <span style="color:BLUE">07/07/2015 17:07,</span><br /></strong><strong><p>El mensaje Mandado es :</p></strong>mysql error: [1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ' , 0, 0, 'S', 0, '', 0, 0)' at line 2] in EXECUTE("INSERT INTO producto (idItem, idDepartamento, idTipoCosteo, costo, precio, impInc, imp, marca, minimo, existencias) VALUES (20,
+, , 0, 0, 'S', 0, '', 0, 0)")
+<br /><hr><b style="color:RED;">Error del Usuario</b><strong> Error en la linea <span style="color:BLUE">77</span> del archivo <span style="color:BLUE">/Library/WebServer/Documents/pdv/librerias/adodb/adodb-errorhandler.inc.php - MOD: cservicios,</span> el dia <span style="color:BLUE">07/07/2015 17:07,</span><br /></strong><strong><p>El mensaje Mandado es :</p></strong>mysql error: [1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '
+				idTipoCosteo = ,
+				costo = ,
+				precio = 15,
+				impInc = 'S',
+				imp =' at line 3] in EXECUTE("UPDATE producto
+			SET
+				idDepartamento = ,
+				idTipoCosteo = ,
+				costo = ,
+				precio = 15,
+				impInc = 'S',
+				imp = 0.15,
+				marca = '',
+				minimo = ,
+				existencias = 
+			WHERE idItem = 20")
+<br /><hr><b style="color:RED;">Error del Usuario</b><strong> Error en la linea <span style="color:BLUE">77</span> del archivo <span style="color:BLUE">/Library/WebServer/Documents/pdv/librerias/adodb/adodb-errorhandler.inc.php - MOD: cservicios,</span> el dia <span style="color:BLUE">07/07/2015 18:07,</span><br /></strong><strong><p>El mensaje Mandado es :</p></strong>mysql error: [1062: Duplicate entry 'S001' for key 'codigo_UNIQUE'] in EXECUTE("INSERT INTO item (idItem, idTipoItem, codigo, nombre, descripcion, fechaAlta) VALUES (null, 1, 'S001', '', '', now());
+
+")
+<br /><hr><b style="color:RED;">Error del Usuario</b><strong> Error en la linea <span style="color:BLUE">77</span> del archivo <span style="color:BLUE">/Library/WebServer/Documents/pdv/librerias/adodb/adodb-errorhandler.inc.php - MOD: cservicios,</span> el dia <span style="color:BLUE">07/07/2015 18:07,</span><br /></strong><strong><p>El mensaje Mandado es :</p></strong>mysql error: [1452: Cannot add or update a child row: a foreign key constraint fails (`pdv`.`servicio`, CONSTRAINT `fk_ServicioItem` FOREIGN KEY (`idItem`) REFERENCES `item` (`idItem`) ON DELETE CASCADE ON UPDATE CASCADE)] in EXECUTE("INSERT INTO servicio (idItem, precio, impInc, imp) VALUES (0, 0, 'S', 0)")
+<br /><hr>

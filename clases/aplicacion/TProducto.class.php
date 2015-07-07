@@ -7,6 +7,8 @@ Class TProducto extends TItem{
 	private $precio;
 	private $impInc;
 	private $imp;
+	private $minimo;
+	private $existencias;
 	
 	public function TProducto($id = ''){
 		if ($id <> '')
@@ -129,6 +131,24 @@ Class TProducto extends TItem{
 		return $this->imp;
 	}
 	
+	public function setMinimo($val = 0){
+		$this->minimo = $val;
+		return true;
+	}
+	
+	public function getMinimo(){
+		return $this->minimo;
+	}
+	
+	public function setExistencias($val = 0){
+		$this->existencias = $val;
+		return true;
+	}
+	
+	public function getExistencias(){
+		return $this->existencias;
+	}
+	
 	public function guardar(){
 		if (! parent::guardar()) return false;
 		
@@ -136,8 +156,8 @@ Class TProducto extends TItem{
 		$rs = $db->Execute("select idItem from producto where idItem = ".$this->getId());
 		
 		if ($rs->EOF){
-			$rs = $db->Execute("INSERT INTO producto (idItem, idDepartamento, idTipoCosteo, costo, precio, impInc, imp, marca) VALUES (".$this->getId().",
-".$this->getIdDepartamento().", ".$this->getIdTipoCosteo().", 0, 0, 'S', 0, '')");
+			$rs = $db->Execute("INSERT INTO producto (idItem, idDepartamento, idTipoCosteo, costo, precio, impInc, imp, marca, minimo, existencias) VALUES (".$this->getId().",
+".$this->getIdDepartamento().", ".$this->getIdTipoCosteo().", 0, 0, 'S', 0, '', 0, 0)");
 		}
 		
 		$rs = $db->Execute("UPDATE producto
@@ -148,7 +168,9 @@ Class TProducto extends TItem{
 				precio = ".$this->getPrecio().",
 				impInc = '".$this->impInc."',
 				imp = ".$this->getImpuesto().",
-				marca = '".$this->getMarca()."'
+				marca = '".$this->getMarca()."',
+				minimo = ".$this->getMinimo().",
+				existencias = ".$this->getExistencias()."
 			WHERE idItem = ".$this->getId());
 			
 		return $rs?true:false;

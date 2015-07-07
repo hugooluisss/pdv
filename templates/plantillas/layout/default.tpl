@@ -114,9 +114,6 @@
                                 <li>
                                     <a href="?mod=servicios">Servicios</a>
                                 </li>
-                                <li>
-                                    <a href="?mod=paquetes">Paquetes</a>
-                                </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>

@@ -171,4 +171,27 @@ $conf['cproductos'] = array(
 	'descripcion' => 'Controlador de productos',
 	'seguridad' => true,
 	'capa' => LAYOUT_AJAX);
+
+/********* Servicios *********/
+$conf['servicios'] = array(
+	'controlador' => 'servicios.php',
+	'vista' => 'inventario/servicios/panel.tpl',
+	'descripcion' => 'Vista del panel',
+	'seguridad' => true,
+	'js' => array('servicio.class.js', 'servicios.js'),
+	'capa' => LAYOUT_DEFECTO);
+
+$conf['servicioAdd'] = array(
+	'controlador' => 'servicios.php',
+	'vista' => 'inventario/servicios/add.tpl',
+	'descripcion' => 'Insetar / modificar servicio',
+	'seguridad' => true,
+	'js' => array('item.class.js', 'servicio.class.js', 'servicios.js'),
+	'capa' => LAYOUT_DEFECTO);
+	
+$conf['cservicios'] = array(
+	'controlador' => 'servicios.php',
+	'descripcion' => 'Controlador de servicios',
+	'seguridad' => true,
+	'capa' => LAYOUT_AJAX);
 ?>

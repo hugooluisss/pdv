@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2015-07-06 23:30:13
+<?php /* Smarty version Smarty-3.1.11, created on 2015-07-07 17:23:09
          compiled from "templates/plantillas/modulos/inventario/productos/panel.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1154184733559b2e425fe3e7-78074914%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '3c585e872436daa28abab204127c661a7bbbdae9' => 
     array (
       0 => 'templates/plantillas/modulos/inventario/productos/panel.tpl',
-      1 => 1436243411,
+      1 => 1436307788,
       2 => 'file',
     ),
   ),
@@ -42,6 +42,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			<tr>
 				<th>Código</th>
 				<th>Nombre</th>
+				<th>Existencias</th>
 				<th>Precio</th>
 				<th></th>
 			</tr>
@@ -55,7 +56,9 @@ $_smarty_tpl->tpl_vars['row']->_loop = true;
 				<tr>
 					<td><?php echo $_smarty_tpl->tpl_vars['row']->value['codigo'];?>
 </td>
-					<td><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['row']->value['nombre'],30);?>
+					<td><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['row']->value['nombre'],50);?>
+</td>
+					<td><?php echo sprintf("%d",(($tmp = @$_smarty_tpl->tpl_vars['row']->value['existencias'])===null||$tmp==='' ? "0" : $tmp));?>
 </td>
 					<td><?php echo sprintf("%0.2f",(($tmp = @$_smarty_tpl->tpl_vars['row']->value['precio'])===null||$tmp==='' ? "0" : $tmp));?>
 </td>
