@@ -2,9 +2,9 @@ CREATE DATABASE  IF NOT EXISTS `pdv` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `pdv`;
 -- MySQL dump 10.13  Distrib 5.6.13, for osx10.6 (i386)
 --
--- Host: localhost    Database: pdv
+-- Host: 127.0.0.1    Database: pdv
 -- ------------------------------------------------------
--- Server version	5.6.17
+-- Server version	5.6.13
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -18,33 +18,37 @@ USE `pdv`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `cliente`
+-- Table structure for table `usuario`
 --
 
-DROP TABLE IF EXISTS `cliente`;
+DROP TABLE IF EXISTS `usuario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `cliente` (
-  `idCliente` int(10) unsigned NOT NULL AUTO_INCREMENT,
+CREATE TABLE `usuario` (
+  `idUsuario` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `idTipoUsuario` smallint(5) unsigned DEFAULT NULL,
   `nombre` varchar(100) DEFAULT NULL,
-  `sexo` char(1) DEFAULT NULL,
-  `telefono` varchar(15) DEFAULT NULL,
-  `email` varchar(100) DEFAULT NULL,
-  `direccion` text,
-  `comentarios` text,
-  `estado` char(1) DEFAULT 'A',
-  PRIMARY KEY (`idCliente`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+  `nick` varchar(100) DEFAULT NULL,
+  `pass` varchar(60) DEFAULT NULL,
+  `alta` date DEFAULT NULL,
+  `ultimoacceso` timestamp NULL DEFAULT NULL,
+  `email` varchar(45) DEFAULT NULL,
+  `estado` varchar(45) DEFAULT 'A',
+  PRIMARY KEY (`idUsuario`),
+  UNIQUE KEY `email_UNIQUE` (`email`),
+  KEY `fk_tipoUsuario` (`idTipoUsuario`),
+  CONSTRAINT `fk_tipoUsuario` FOREIGN KEY (`idTipoUsuario`) REFERENCES `tipoUsuario` (`idTipoUsuario`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `cliente`
+-- Dumping data for table `usuario`
 --
 
-LOCK TABLES `cliente` WRITE;
-/*!40000 ALTER TABLE `cliente` DISABLE KEYS */;
-INSERT INTO `cliente` VALUES (1,'Cliente de mostrador','M','','','','','A'),(2,'Cliente 2','M','','','','','E');
-/*!40000 ALTER TABLE `cliente` ENABLE KEYS */;
+LOCK TABLES `usuario` WRITE;
+/*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
+INSERT INTO `usuario` VALUES (1,1,'Hugo Luis Santiago Altamirano','admin','21232f297a57a5a743894a0e4a801fc3',NULL,'2015-07-07 00:12:43',NULL,'A'),(10,1,'Hugo Santiago','hugo.santiago','d41d8cd98f00b204e9800998ecf8427e','2015-07-02',NULL,'hugooluisss@gmail.com','A'),(13,0,'huguntu','huguntu2','c474172120640848b304bcf01b0d55c4','2015-07-02',NULL,'hugo.santiago@iebo.edu.mx','E');
+/*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -56,4 +60,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-07-03 14:02:46
+-- Dump completed on 2015-07-06 23:44:57

@@ -106,6 +106,21 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
+                            <a href="#"><i class="fa fa-stack-overflow fa-fw"></i> Inventario<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="?mod=productos">Productos</a>
+                                </li>
+                                <li>
+                                    <a href="?mod=servicios">Servicios</a>
+                                </li>
+                                <li>
+                                    <a href="?mod=paquetes">Paquetes</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
                             <a href="tables.html"><i class="fa fa-files-o fa-fw"></i> Ventas</a>
                         </li>
                         <li>

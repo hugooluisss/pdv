@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2015-07-03 13:44:41
+<?php /* Smarty version Smarty-3.1.11, created on 2015-07-06 19:12:43
          compiled from "templates/plantillas/layout/default.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:86087753755784df4f34a24-17731746%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '88f47345f87357691db158f81dd14f424f0cd759' => 
     array (
       0 => 'templates/plantillas/layout/default.tpl',
-      1 => 1435949080,
+      1 => 1436050928,
       2 => 'file',
     ),
   ),
@@ -130,6 +130,21 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                                 </li>
                                 <li>
                                     <a href="?mod=departamentos">Departamentos</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-stack-overflow fa-fw"></i> Inventario<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="?mod=productos">Productos</a>
+                                </li>
+                                <li>
+                                    <a href="?mod=servicios">Servicios</a>
+                                </li>
+                                <li>
+                                    <a href="?mod=paquetes">Paquetes</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->

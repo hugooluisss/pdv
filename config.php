@@ -142,4 +142,33 @@ $conf['cdepartamentos'] = array(
 	'descripcion' => 'Controlador de departamentos',
 	'seguridad' => true,
 	'capa' => LAYOUT_AJAX);
+	
+/********* Productos *********/
+$conf['citems'] = array(
+	'controlador' => 'items.php',
+	'descripcion' => 'Controlador de productos, servicios y paquetes',
+	'seguridad' => true,
+	'capa' => LAYOUT_AJAX);
+	
+$conf['productos'] = array(
+	'controlador' => 'productos.php',
+	'vista' => 'inventario/productos/panel.tpl',
+	'descripcion' => 'Vista del panel',
+	'seguridad' => true,
+	'js' => array('producto.class.js', 'productos.js'),
+	'capa' => LAYOUT_DEFECTO);
+	
+$conf['productoAdd'] = array(
+	'controlador' => 'productos.php',
+	'vista' => 'inventario/productos/add.tpl',
+	'descripcion' => 'Insetar / modificar producto',
+	'seguridad' => true,
+	'js' => array('item.class.js', 'producto.class.js', 'productos.js'),
+	'capa' => LAYOUT_DEFECTO);
+	
+$conf['cproductos'] = array(
+	'controlador' => 'productos.php',
+	'descripcion' => 'Controlador de productos',
+	'seguridad' => true,
+	'capa' => LAYOUT_AJAX);
 ?>
