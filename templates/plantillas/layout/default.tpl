@@ -114,11 +114,11 @@
                                 <li>
                                     <a href="?mod=servicios">Servicios</a>
                                 </li>
+                                <li>
+		                            <a href="?mod=entradas">Entradas</a>
+		                        </li>
                             </ul>
                             <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="tables.html"><i class="fa fa-files-o fa-fw"></i> Ventas</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Reportes<span class="fa arrow"></span></a>

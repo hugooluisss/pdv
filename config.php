@@ -194,4 +194,21 @@ $conf['cservicios'] = array(
 	'descripcion' => 'Controlador de servicios',
 	'seguridad' => true,
 	'capa' => LAYOUT_AJAX);
+	
+/* Entradas */
+$conf['entradas'] = array(
+	#'controlador' => 'servicios.php',
+	'vista' => 'inventario/entradas/panel.tpl',
+	'descripcion' => 'Vista del panel',
+	'seguridad' => true,
+	#'js' => array('servicio.class.js', 'servicios.js'),
+	'capa' => LAYOUT_DEFECTO);
+
+$conf['entradaAdd'] = array(
+	#'controlador' => 'servicios.php',
+	'vista' => 'inventario/entradas/orden.tpl',
+	'descripcion' => 'Orden de entrada',
+	'seguridad' => true,
+	'js' => array('ordenEntrada.js'),
+	'capa' => LAYOUT_DEFECTO);
 ?>

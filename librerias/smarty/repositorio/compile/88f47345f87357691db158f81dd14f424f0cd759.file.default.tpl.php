@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2015-07-07 18:29:31
+<?php /* Smarty version Smarty-3.1.11, created on 2015-07-21 12:15:19
          compiled from "templates/plantillas/layout/default.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:86087753755784df4f34a24-17731746%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '88f47345f87357691db158f81dd14f424f0cd759' => 
     array (
       0 => 'templates/plantillas/layout/default.tpl',
-      1 => 1436311770,
+      1 => 1437498918,
       2 => 'file',
     ),
   ),
@@ -143,11 +143,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                                 <li>
                                     <a href="?mod=servicios">Servicios</a>
                                 </li>
+                                <li>
+		                            <a href="?mod=entradas">Entradas</a>
+		                        </li>
                             </ul>
                             <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="tables.html"><i class="fa fa-files-o fa-fw"></i> Ventas</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Reportes<span class="fa arrow"></span></a>
