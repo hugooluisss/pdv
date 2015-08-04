@@ -18,7 +18,7 @@ TProducto = function(){
 				"existencias": existencias
 			}, function(data) {
 				if (data.band == 'false'){
-					alert(data.mensaje == ''?"Upps. Ocurrió un error al agregar el producto: ":data.mensaje);
+					alert((data.mensaje == '' || data.mensaje == undefined)?"Upps. Ocurrió un error al agregar el producto: ":data.mensaje);
 					if (fn.error != undefined)
 						fn.error(data);
 				}else
@@ -36,6 +36,14 @@ TProducto = function(){
 			}else{
 				fn.ok(data);
 			}
+		}, "json");
+	};
+	
+	this.findCodigo = function(codigo, fn){
+		$.post('?mod=cproductos&action=findCodigo', {
+			"codigo": codigo,
+		}, function(data){
+			fn.ok(data);
 		}, "json");
 	};
 };

@@ -28,6 +28,9 @@
 
     <!-- Custom Fonts -->
     <link href="templates/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
+    <!-- MetisMenu CSS -->
+    <link href="templates/dist/css/ui.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -154,6 +157,7 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="templates/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="templates/bower_components/jquery/src/ui/jquery-ui.js"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
     <script src="templates/bower_components/metisMenu/dist/metisMenu.min.js"></script>

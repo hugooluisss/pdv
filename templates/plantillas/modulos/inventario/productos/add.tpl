@@ -52,12 +52,6 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="txtExistencias" class="col-lg-2 control-label">Existencias</label>
-				<div class="col-lg-2">
-					<input class="form-control" id="txtExistencias" type="text" name="txtExistencias" autocomplete="off" value="{$producto->getExistencias()|default:"0"}" style="text-align: right"/>
-				</div>
-			</div>
-			<div class="form-group">
 				<label for="txtMinimo" class="col-lg-2 control-label">Inventario mínimo</label>
 				<div class="col-lg-2">
 					<input class="form-control" id="txtMinimo" type="text" name="txtMinimo" autocomplete="off" value="{$producto->getMinimo()|default:"0"}" style="text-align: right"/>

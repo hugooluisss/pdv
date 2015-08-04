@@ -83,9 +83,10 @@ Class TItem{
 		$db = TBase::conectaDB();
 		
 		if ($this->getId() == ''){
-			$rs = $db->Execute("INSERT INTO item (idItem, idTipoItem, codigo, nombre, descripcion, fechaAlta) VALUES (null, ".$this->getIdTipo().", '".$this->getCodigo()."', '', '', now());
-
-");
+			$rs = $db->Execute("INSERT INTO item (idItem, idTipoItem, codigo, nombre, descripcion, fechaAlta) VALUES (null, ".$this->getIdTipo().", '".$this->getCodigo()."', '', '', now());");
+			if (!$rs) 
+				return false;
+				
 			$this->idItem = $db->Insert_ID();
 		}
 		

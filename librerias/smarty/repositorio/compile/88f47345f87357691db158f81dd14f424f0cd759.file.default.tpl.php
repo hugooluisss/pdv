@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2015-07-21 12:15:19
+<?php /* Smarty version Smarty-3.1.11, created on 2015-08-04 11:19:09
          compiled from "templates/plantillas/layout/default.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:86087753755784df4f34a24-17731746%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '88f47345f87357691db158f81dd14f424f0cd759' => 
     array (
       0 => 'templates/plantillas/layout/default.tpl',
-      1 => 1437498918,
+      1 => 1438705147,
       2 => 'file',
     ),
   ),
@@ -56,6 +56,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
     <!-- Custom Fonts -->
     <link href="templates/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
+    <!-- MetisMenu CSS -->
+    <link href="templates/dist/css/ui.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -184,6 +187,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
     <!-- Bootstrap Core JavaScript -->
     <script src="templates/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="templates/bower_components/jquery/src/ui/jquery-ui.js"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
     <script src="templates/bower_components/metisMenu/dist/metisMenu.min.js"></script>

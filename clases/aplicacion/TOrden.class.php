@@ -36,6 +36,16 @@ Class TOrden{
 		return $this->idOrden;
 	}
 	
+	public function setClave($val = ''){
+		$this->clave = $val;
+		
+		return true;
+	}
+	
+	public function getClave(){
+		return $this->clave;
+	}
+	
 	public function addMovimiento($idItem, $cantidad, $precio){
 		if ($this->getId() == '') return false;
 		

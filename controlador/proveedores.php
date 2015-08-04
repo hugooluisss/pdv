@@ -41,7 +41,7 @@ switch($objModulo->getId()){
 				$obj->setComentarios($_POST['comentarios']);
 				
 				if ($obj->guardar())
-					echo json_encode(array("band" => "true"));
+					echo json_encode(array("band" => "true", "id" => $obj->getId()));
 				else
 					echo json_encode(array("band" => "false"));
 			break;
@@ -52,6 +52,26 @@ switch($objModulo->getId()){
 					echo json_encode(array("band" => "true"));
 				else
 					echo json_encode(array("band" => "false"));
+			break;
+			case 'autocomplete':
+				$db = TBase::conectaDB();
+				$rs = $db->Execute("select idProveedor from proveedor where empresa like '%".$_GET['term']."%' or nombre like '%".$_GET['term']."%'");
+				
+				$obj = new TProveedor;
+				$datos = array();
+				while(!$rs->EOF){
+					$el = array();
+					
+					$obj->setId($rs->fields['idProveedor']);
+					$el['id'] = $obj->getId();
+					$el['label'] = $obj->getEmpresa();
+					$el['identificador'] = $obj->getId();
+					
+					array_push($datos, $el);
+					$rs->moveNext();
+				}
+				
+				echo json_encode($datos);
 			break;
 		}
 	break;

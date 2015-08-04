@@ -205,10 +205,10 @@ $conf['entradas'] = array(
 	'capa' => LAYOUT_DEFECTO);
 
 $conf['entradaAdd'] = array(
-	#'controlador' => 'servicios.php',
+	'controlador' => 'ordenEntrada.php',
 	'vista' => 'inventario/entradas/orden.tpl',
 	'descripcion' => 'Orden de entrada',
 	'seguridad' => true,
-	'js' => array('ordenEntrada.js'),
+	'js' => array('proveedor.class.js', 'producto.class.js', 'ordenEntrada.js'),
 	'capa' => LAYOUT_DEFECTO);
 ?>

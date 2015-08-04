@@ -15,7 +15,7 @@ TProveedor = function(){
 				
 			}, function(data) {
 				if (data.band == 'false'){
-					alert(data.mensaje == ''?"Upps. Ocurrió un error al agregar al proveedor":data.mensaje);
+					alert(data.mensaje == ''?"Upps. Ocurrió un error al agregar al proveedor": data.mensaje);
 					if (fn.error != undefined)
 						fn.error(data);
 				}else

@@ -63,9 +63,38 @@ switch($objModulo->getId()){
 				$obj->setExistencias($_POST['existencias']);
 				
 				if ($obj->guardar())
-					echo json_encode(array("band" => "true"));
+					echo json_encode(array("band" => "true", "id" => $obj->getId()));
 				else
 					echo json_encode(array("band" => "false"));
+			break;
+			case 'autocomplete':
+				$db = TBase::conectaDB();
+				$rs = $db->Execute("select idItem from producto a join item b using(idItem) where idTipoItem = 1 and (nombre like '%".$_GET['term']."%' or descripcion like '%".$_GET['term']."%')");
+				
+				$obj = new TProducto;
+				$datos = array();
+				while(!$rs->EOF){
+					$el = array();
+					
+					$obj->setId($rs->fields['idItem']);
+					$el['id'] = $obj->getId();
+					$el['label'] = $obj->getNombre();
+					$el['identificador'] = $obj->getId();
+					
+					array_push($datos, $el);
+					$rs->moveNext();
+				}
+				
+				echo json_encode($datos);
+			break;
+			case 'findCodigo':
+				$db = TBase::conectaDB();
+				$rs = $db->Execute("select idItem, nombre from item where idTipoItem = 1 and codigo = '".$_POST['codigo']."'");
+				
+				if ($rs->EOF)
+					echo json_encode(array());
+				else
+					echo json_encode(array("id" => $rs->fields['idItem'], "nombre" => $rs->fields['nombre']));
 			break;
 		}
 	break;
