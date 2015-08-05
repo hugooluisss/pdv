@@ -28,12 +28,12 @@
 	</form>
 </div>
 <br />
-<div class="row">
-	<form role="form" id="frmAdd" class="form-horizontal" onsubmit="javascript: return false;">
-		<div class="col-lg-8">
+<form role="form" id="frmAdd" class="form-horizontal" onsubmit="javascript: return false;">
+	<div class="row">
+		<div class="col-lg-12">
 			<div class="form-group">
-				<label for="txtProducto" class="col-lg-3 control-label">Artículo</label>
-				<div class="col-lg-7">
+				<label for="txtProducto" class="col-lg-2 control-label">Artículo</label>
+				<div class="col-lg-8">
 					<input class="form-control input-sm" id="txtProducto" type="text" name="txtProducto" autocomplete="off" autofocus="true" />
 				</div>
 				<div class="col-lg-2">
@@ -41,19 +41,29 @@
 				</div>
 			</div>
 		</div>
+	</div>
+	<div class="row">
 		<div class="col-lg-4">
 			<div class="form-group">
 				<label for="txtExistencias" class="col-lg-3 control-label">Total</label>
 				<div class="col-lg-4">
 					<input class="form-control input-sm" id="txtExistencias" type="text" name="txtExistencias" autocomplete="off" autofocus="true" style="text-align: right"/>
 				</div>
+			</div>
+		</div>
+		<div class="col-lg-4">
+			<div class="form-group">
+				<label for="txtPrecio" class="col-lg-3 control-label">P. U.</label>
+				<div class="col-lg-4">
+					<input class="form-control input-sm" id="txtPrecio" type="text" name="txtPrecio" autocomplete="off" autofocus="true" style="text-align: right"/>
+				</div>
 				<div class="col-lg-2">
 					<input id="btnAddItem" name="btnAddItem" class="btn btn-danger btn-md" value="Agregar" type="button" />
 				</div>
 			</div>
 		</div>
-	</form>
-</div>
+	</div>
+</form>
 <br>
 <hr />
 <div class="col-lg-12">

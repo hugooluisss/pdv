@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2015-08-04 20:18:59
+<?php /* Smarty version Smarty-3.1.11, created on 2015-08-05 13:35:23
          compiled from "templates/plantillas/modulos/inventario/entradas/orden.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:176595676955af2570b2be00-52146486%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '4ccdb2393565cda463806fba72617a8fa0651d7c' => 
     array (
       0 => 'templates/plantillas/modulos/inventario/entradas/orden.tpl',
-      1 => 1438737447,
+      1 => 1438799719,
       2 => 'file',
     ),
   ),
@@ -58,12 +58,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	</form>
 </div>
 <br />
-<div class="row">
-	<form role="form" id="frmAdd" class="form-horizontal" onsubmit="javascript: return false;">
-		<div class="col-lg-8">
+<form role="form" id="frmAdd" class="form-horizontal" onsubmit="javascript: return false;">
+	<div class="row">
+		<div class="col-lg-12">
 			<div class="form-group">
-				<label for="txtProducto" class="col-lg-3 control-label">Artículo</label>
-				<div class="col-lg-7">
+				<label for="txtProducto" class="col-lg-2 control-label">Artículo</label>
+				<div class="col-lg-8">
 					<input class="form-control input-sm" id="txtProducto" type="text" name="txtProducto" autocomplete="off" autofocus="true" />
 				</div>
 				<div class="col-lg-2">
@@ -71,19 +71,29 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				</div>
 			</div>
 		</div>
+	</div>
+	<div class="row">
 		<div class="col-lg-4">
 			<div class="form-group">
 				<label for="txtExistencias" class="col-lg-3 control-label">Total</label>
 				<div class="col-lg-4">
 					<input class="form-control input-sm" id="txtExistencias" type="text" name="txtExistencias" autocomplete="off" autofocus="true" style="text-align: right"/>
 				</div>
+			</div>
+		</div>
+		<div class="col-lg-4">
+			<div class="form-group">
+				<label for="txtPrecio" class="col-lg-3 control-label">P. U.</label>
+				<div class="col-lg-4">
+					<input class="form-control input-sm" id="txtPrecio" type="text" name="txtPrecio" autocomplete="off" autofocus="true" style="text-align: right"/>
+				</div>
 				<div class="col-lg-2">
 					<input id="btnAddItem" name="btnAddItem" class="btn btn-danger btn-md" value="Agregar" type="button" />
 				</div>
 			</div>
 		</div>
-	</form>
-</div>
+	</div>
+</form>
 <br>
 <hr />
 <div class="col-lg-12">

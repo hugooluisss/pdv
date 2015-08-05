@@ -32,7 +32,7 @@ switch($objModulo->getId()){
 				$orden->setClave($_POST['clave']);
 				
 				if($orden->guardar())
-					echo json_encode(array("band" => "true"));
+					echo json_encode(array("band" => "true", "id" => $orden->getId()));
 				else
 					echo json_encode(array("band" => "false"));
 			break;

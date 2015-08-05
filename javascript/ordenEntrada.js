@@ -142,12 +142,12 @@ $(document).ready(function(){
 	});
 	
 	$("#btnAddItem").click(function(){
-		if ($("#orden").val() == '')
+		agregar();
+	});
+	
+	$("#txtProducto").keypress(function(e){
+		if(e.which == 13)
 			agregar();
-		else{
-			var orden = new TOrden;
-		}
-		
 	});
 		
 	
@@ -159,13 +159,49 @@ $(document).ready(function(){
 			alert("Indica quien es el proveedor de la orden");
 			$("#txtProveedor").val("");
 			$("#txtProveedor").focus();
+		}else if($("#txtProducto").attr("idProducto") == ""){
+			alert("Ingresa el producto");
+			$("#txtProducto").val("");
+			$("#txtProducto").focus();
+		}else if($("#txtExistencias").val() == ""){
+			alert("Indica la cantidad total adquirida");
+			$("#txtExistencias").val("");
+			$("#txtExistencias").focus();
+		}else if($("#txtPrecio").val() == ""){
+			alert("Indica el precio unitario");
+			$("#txtPrecio").val("");
+			$("#txtPrecio").focus();
 		}else{
-			obj = new TEntrada;
-			
-			obj.crear($("#orden").val(), $("#txtNumero").val(), $("#txtProveedor").attr("idProveedor"), {
-				ok: function(data){
-				}
-			});
+			if ($("#orden").val() == ''){
+				obj = new TEntrada;
+				
+				obj.crear($("#orden").val(), $("#txtNumero").val(), $("#txtProveedor").attr("idProveedor"), {
+					ok: function(data){
+						if (data.band == 'true'){
+							$("#orden").val(data.id);
+							alert(data.id);
+							
+							var orden = new TOrden;
+							orden.addItem($("#orden").val(), $("#txtProducto").val(), $("#txtExistencias").val(), $("#txtPrecio").val(), {
+								ok: function(){
+									$("#txtProducto").val("").focus();
+									$("#txtProducto").attr("idProducto", "");
+									$("#txtExistencias").val("");
+								}
+							});
+						}
+					}
+				});
+			}else{
+				var orden = new TOrden;
+				orden.addItem($("#orden").val(), $("#txtProducto").val(), $("#txtExistencias").val(), $("#txtPrecio").val(), {
+					ok: function(){
+						$("#txtProducto").val("").focus();
+						$("#txtProducto").attr("idProducto", "");
+						$("#txtExistencias").val("");
+					}
+				});
+			}
 
 		}
 	}

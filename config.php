@@ -194,7 +194,14 @@ $conf['cservicios'] = array(
 	'descripcion' => 'Controlador de servicios',
 	'seguridad' => true,
 	'capa' => LAYOUT_AJAX);
-	
+
+/******* Ordenes *****/
+$conf['corden'] = array(
+	'controlador' => 'orden.php',
+	'descripcion' => 'Controlador de ordenes',
+	'seguridad' => true,
+	'capa' => LAYOUT_AJAX);
+		
 /* Entradas */
 $conf['entradas'] = array(
 	#'controlador' => 'servicios.php',
@@ -209,7 +216,7 @@ $conf['entradaAdd'] = array(
 	'vista' => 'inventario/entradas/orden.tpl',
 	'descripcion' => 'Orden de entrada',
 	'seguridad' => true,
-	'js' => array('proveedor.class.js', 'producto.class.js', 'entrada.class.js', 'ordenEntrada.js'),
+	'js' => array('proveedor.class.js', 'producto.class.js', 'entrada.class.js', 'orden.class.js', 'ordenEntrada.js'),
 	'capa' => LAYOUT_DEFECTO);
 	
 $conf['cordenentrada'] = array(

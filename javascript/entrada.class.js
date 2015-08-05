@@ -5,7 +5,7 @@ TEntrada = function(){
 		$.post('?mod=cordenentrada&action=crear', {
 				"id": id,
 				"clave": clave,
-				"proveedor": proveedor
+				"proveedor": proveedor,
 			}, function(data) {
 				if (data.band == 'false'){
 					alert((data.mensaje == '' || data.mensaje == undefined)?"Upps. Ocurrió un error al crear la orden: ":data.mensaje);
