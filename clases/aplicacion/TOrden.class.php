@@ -73,16 +73,10 @@ Class TOrden{
 	}
 	
 	public function guardar(){
-		if ($this->getOrden() == '')
-			return false;
-			
 		$db = TBase::conectaDB();
 		
 		if ($this->getId() == ''){
-			$rs = $db->Execute("select * from orden where clave = '".$this->getClave()."'");
-			if (!$rs->EOF) return false;
-			
-			$rs = $db->Execute("INSERT INTO orden (idOrden, clave, fecha) VALUES (null, ".$this->getClave().", now());");
+			$rs = $db->Execute("INSERT INTO orden (clave, fecha) VALUES ('".$this->getClave()."', now());");
 			$this->setId($db->Insert_ID());
 		}
 		
@@ -90,12 +84,12 @@ Class TOrden{
 		
 		if ($rs->fields['idOrden'] <> $this->getId())
 			return false;
-		
+
 		$rs = $db->Execute("UPDATE orden
 			SET
 				clave = '".$this->getClave()."'
 			WHERE idOrden = ".$this->getId());
-			
+		
 		return $rs?true:false;
 	}
 	

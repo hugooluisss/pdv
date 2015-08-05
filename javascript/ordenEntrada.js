@@ -140,25 +140,33 @@ $(document).ready(function(){
 	$("#btnWinProducto").click(function(){
 		$('#dvProducto').modal("show");
 	});
+	
+	$("#btnAddItem").click(function(){
+		if ($("#orden").val() == '')
+			agregar();
+		else{
+			var orden = new TOrden;
+		}
+		
+	});
 		
 	
 	function agregar(){
 		if ($("#txtNumero").val() ==  ""){
 			alert("Indica el número de la nota de entrada");
 			$("#txtNumero").focus();
-		}else if($("#txtProveedor").attr("idProveedor")){
+		}else if($("#txtProveedor").attr("idProveedor") == ""){
 			alert("Indica quien es el proveedor de la orden");
 			$("#txtProveedor").val("");
 			$("#txtProveedor").focus();
 		}else{
 			obj = new TEntrada;
 			
-			obj.crear($("#orden").val(), $("#txtNumero").val(), $("#orden").attr("idProveedor"), {
+			obj.crear($("#orden").val(), $("#txtNumero").val(), $("#txtProveedor").attr("idProveedor"), {
 				ok: function(data){
 				}
-			}});
+			});
 
 		}
-			
 	}
 });

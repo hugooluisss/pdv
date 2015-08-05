@@ -18,27 +18,34 @@ USE `pdv`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `tipoUsuario`
+-- Table structure for table `item`
 --
 
-DROP TABLE IF EXISTS `tipoUsuario`;
+DROP TABLE IF EXISTS `item`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `tipoUsuario` (
-  `idTipoUsuario` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`idTipoUsuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+CREATE TABLE `item` (
+  `idItem` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `idTipoItem` smallint(5) unsigned DEFAULT NULL,
+  `codigo` varchar(50) DEFAULT NULL,
+  `nombre` varchar(50) DEFAULT NULL,
+  `descripcion` text,
+  `fechaAlta` datetime DEFAULT NULL,
+  `ultimaActualizacion` datetime DEFAULT NULL,
+  `estado` char(1) DEFAULT 'A',
+  PRIMARY KEY (`idItem`),
+  UNIQUE KEY `codigo_UNIQUE` (`codigo`)
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `tipoUsuario`
+-- Dumping data for table `item`
 --
 
-LOCK TABLES `tipoUsuario` WRITE;
-/*!40000 ALTER TABLE `tipoUsuario` DISABLE KEYS */;
-INSERT INTO `tipoUsuario` VALUES (0,'Sin perfil'),(1,'Administrador');
-/*!40000 ALTER TABLE `tipoUsuario` ENABLE KEYS */;
+LOCK TABLES `item` WRITE;
+/*!40000 ALTER TABLE `item` DISABLE KEYS */;
+INSERT INTO `item` VALUES (18,1,'718644081391','Esponja lustradora de calzado color neutro','Esponja lustradora de calzado color neutro','2015-07-06 23:22:31','2015-07-07 16:58:15','A'),(19,1,'4005808802005','Crema para piel extra seca','Crema para piel extra seca mil nutritiva, nutre intensamente','2015-07-06 23:25:51','2015-07-07 16:27:31','A'),(24,2,'S002','Envolver regalos','Envolver regalos','2015-07-07 18:04:39','2015-07-07 18:10:59','A'),(25,2,'S001','Forrar libreta tamaño profesional','Forrar libreta tamaño profesional','2015-07-07 18:12:12','2015-07-07 18:12:58','E');
+/*!40000 ALTER TABLE `item` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-07-06 23:44:57
+-- Dump completed on 2015-08-04 23:59:49

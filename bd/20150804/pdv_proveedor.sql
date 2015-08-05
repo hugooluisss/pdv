@@ -18,27 +18,36 @@ USE `pdv`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `tipoUsuario`
+-- Table structure for table `proveedor`
 --
 
-DROP TABLE IF EXISTS `tipoUsuario`;
+DROP TABLE IF EXISTS `proveedor`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `tipoUsuario` (
-  `idTipoUsuario` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`idTipoUsuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+CREATE TABLE `proveedor` (
+  `idProveedor` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `empresa` varchar(100) DEFAULT NULL,
+  `nombre` varchar(150) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `tel` varchar(20) DEFAULT NULL,
+  `direccion` text,
+  `ciudad` varchar(45) DEFAULT NULL,
+  `estado` varchar(45) DEFAULT NULL,
+  `cuenta` varchar(45) DEFAULT NULL,
+  `comentarios` text,
+  `puesto` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idProveedor`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `tipoUsuario`
+-- Dumping data for table `proveedor`
 --
 
-LOCK TABLES `tipoUsuario` WRITE;
-/*!40000 ALTER TABLE `tipoUsuario` DISABLE KEYS */;
-INSERT INTO `tipoUsuario` VALUES (0,'Sin perfil'),(1,'Administrador');
-/*!40000 ALTER TABLE `tipoUsuario` ENABLE KEYS */;
+LOCK TABLES `proveedor` WRITE;
+/*!40000 ALTER TABLE `proveedor` DISABLE KEYS */;
+INSERT INTO `proveedor` VALUES (1,'Empresa por defecto','Contacto por defecto','','','','','','','',''),(2,'','Esponja lustradora de zapatos color neutro','','','','','','','',''),(3,'','Lustradora','','','','','','','',''),(4,'','Lustradora','','','','','','','','');
+/*!40000 ALTER TABLE `proveedor` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +59,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-07-06 23:44:57
+-- Dump completed on 2015-08-04 23:59:49

@@ -18,27 +18,37 @@ USE `pdv`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `tipoUsuario`
+-- Table structure for table `usuario`
 --
 
-DROP TABLE IF EXISTS `tipoUsuario`;
+DROP TABLE IF EXISTS `usuario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `tipoUsuario` (
-  `idTipoUsuario` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`idTipoUsuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+CREATE TABLE `usuario` (
+  `idUsuario` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `idTipoUsuario` smallint(5) unsigned DEFAULT NULL,
+  `nombre` varchar(100) DEFAULT NULL,
+  `nick` varchar(100) DEFAULT NULL,
+  `pass` varchar(60) DEFAULT NULL,
+  `alta` date DEFAULT NULL,
+  `ultimoacceso` timestamp NULL DEFAULT NULL,
+  `email` varchar(45) DEFAULT NULL,
+  `estado` varchar(45) DEFAULT 'A',
+  PRIMARY KEY (`idUsuario`),
+  UNIQUE KEY `email_UNIQUE` (`email`),
+  KEY `fk_tipoUsuario` (`idTipoUsuario`),
+  CONSTRAINT `fk_tipoUsuario` FOREIGN KEY (`idTipoUsuario`) REFERENCES `tipoUsuario` (`idTipoUsuario`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `tipoUsuario`
+-- Dumping data for table `usuario`
 --
 
-LOCK TABLES `tipoUsuario` WRITE;
-/*!40000 ALTER TABLE `tipoUsuario` DISABLE KEYS */;
-INSERT INTO `tipoUsuario` VALUES (0,'Sin perfil'),(1,'Administrador');
-/*!40000 ALTER TABLE `tipoUsuario` ENABLE KEYS */;
+LOCK TABLES `usuario` WRITE;
+/*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
+INSERT INTO `usuario` VALUES (1,1,'Hugo Luis Santiago Altamirano','admin','21232f297a57a5a743894a0e4a801fc3',NULL,'2015-08-05 01:15:13',NULL,'A'),(10,1,'Hugo Santiago','hugo.santiago','d41d8cd98f00b204e9800998ecf8427e','2015-07-02',NULL,'hugooluisss@gmail.com','A'),(13,0,'huguntu','huguntu2','c474172120640848b304bcf01b0d55c4','2015-07-02',NULL,'hugo.santiago@iebo.edu.mx','E');
+/*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +60,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-07-06 23:44:57
+-- Dump completed on 2015-08-04 23:59:49

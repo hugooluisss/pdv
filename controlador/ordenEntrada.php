@@ -29,7 +29,7 @@ switch($objModulo->getId()){
 			case 'crear':
 				$orden = new TEntrada;
 				$orden->setProveedor($_POST['proveedor']);
-				$orden->setClave($_POST['numero']);
+				$orden->setClave($_POST['clave']);
 				
 				if($orden->guardar())
 					echo json_encode(array("band" => "true"));

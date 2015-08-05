@@ -18,27 +18,27 @@ USE `pdv`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `tipoUsuario`
+-- Table structure for table `tipoCosteo`
 --
 
-DROP TABLE IF EXISTS `tipoUsuario`;
+DROP TABLE IF EXISTS `tipoCosteo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `tipoUsuario` (
-  `idTipoUsuario` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tipoCosteo` (
+  `idTipoCosteo` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
   `nombre` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`idTipoUsuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`idTipoCosteo`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `tipoUsuario`
+-- Dumping data for table `tipoCosteo`
 --
 
-LOCK TABLES `tipoUsuario` WRITE;
-/*!40000 ALTER TABLE `tipoUsuario` DISABLE KEYS */;
-INSERT INTO `tipoUsuario` VALUES (0,'Sin perfil'),(1,'Administrador');
-/*!40000 ALTER TABLE `tipoUsuario` ENABLE KEYS */;
+LOCK TABLES `tipoCosteo` WRITE;
+/*!40000 ALTER TABLE `tipoCosteo` DISABLE KEYS */;
+INSERT INTO `tipoCosteo` VALUES (1,'Costo más alto'),(2,'Costo más bajo'),(3,'Costo promedio');
+/*!40000 ALTER TABLE `tipoCosteo` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-07-06 23:44:57
+-- Dump completed on 2015-08-04 23:59:49

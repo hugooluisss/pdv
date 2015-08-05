@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2015-08-04 13:12:35
+<?php /* Smarty version Smarty-3.1.11, created on 2015-08-04 20:18:59
          compiled from "templates/plantillas/modulos/inventario/entradas/orden.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:176595676955af2570b2be00-52146486%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '4ccdb2393565cda463806fba72617a8fa0651d7c' => 
     array (
       0 => 'templates/plantillas/modulos/inventario/entradas/orden.tpl',
-      1 => 1438711953,
+      1 => 1438737447,
       2 => 'file',
     ),
   ),
@@ -35,6 +35,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 </div>
 <div class="row">
 	<form role="form" id="frmAdd" class="form-horizontal" onsubmit="javascript: return false;">
+		<input type="hidden" id="orden" value=""/>
 		<div class="col-lg-4">
 			<div class="form-group">
 				<label for="txtNumero" class="col-lg-6 control-label">No. Orden / Factura</label>
@@ -77,7 +78,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					<input class="form-control input-sm" id="txtExistencias" type="text" name="txtExistencias" autocomplete="off" autofocus="true" style="text-align: right"/>
 				</div>
 				<div class="col-lg-2">
-					<input id="btnRecibirItem" name="btnRecibirItem" class="btn btn-danger btn-md" value="Agregar" type="button" />
+					<input id="btnAddItem" name="btnAddItem" class="btn btn-danger btn-md" value="Agregar" type="button" />
 				</div>
 			</div>
 		</div>

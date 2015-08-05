@@ -10,6 +10,8 @@ Class TEntrada extends TOrden{
 	}
 	
 	public function setId($id = ''){
+		if ($id == '') return false;
+
 		parent::setId($id);
 		
 		$db = TBase::conectaDB();
@@ -43,7 +45,7 @@ Class TEntrada extends TOrden{
 		$db = TBase::conectaDB();
 		$rs = $db->Execute("select idOrden from entrada where idOrden = ".$this->getId());
 		if ($rs->EOF)
-			$db->Execute("INSERT INTO entrada (idOrden, idProveedor, estado) VALUES (null, ".$this->proveedor->getId().", 'C')");
+			$db->Execute("INSERT INTO entrada (idOrden, idProveedor, estado) VALUES (".$this->getId().", ".$this->proveedor->getId().", 'C')");
 		
 		$rs = $db->Execute("update entrada set idProveedor = ".$this->proveedor->getId()." where idOrden = ".$this->getId());
 		

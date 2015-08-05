@@ -209,6 +209,12 @@ $conf['entradaAdd'] = array(
 	'vista' => 'inventario/entradas/orden.tpl',
 	'descripcion' => 'Orden de entrada',
 	'seguridad' => true,
-	'js' => array('proveedor.class.js', 'producto.class.js', 'ordenEntrada.js'),
+	'js' => array('proveedor.class.js', 'producto.class.js', 'entrada.class.js', 'ordenEntrada.js'),
 	'capa' => LAYOUT_DEFECTO);
+	
+$conf['cordenentrada'] = array(
+	'controlador' => 'ordenEntrada.php',
+	'descripcion' => 'Controlador de ordenes de entrada',
+	'seguridad' => true,
+	'capa' => LAYOUT_AJAX);
 ?>

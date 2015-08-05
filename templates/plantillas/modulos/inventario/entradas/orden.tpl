@@ -48,7 +48,7 @@
 					<input class="form-control input-sm" id="txtExistencias" type="text" name="txtExistencias" autocomplete="off" autofocus="true" style="text-align: right"/>
 				</div>
 				<div class="col-lg-2">
-					<input id="btnRecibirItem" name="btnRecibirItem" class="btn btn-danger btn-md" value="Agregar" type="button" />
+					<input id="btnAddItem" name="btnAddItem" class="btn btn-danger btn-md" value="Agregar" type="button" />
 				</div>
 			</div>
 		</div>
