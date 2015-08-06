@@ -16,4 +16,18 @@ TEntrada = function(){
 			}, "json"
 		);
 	}
+	
+	this.aplicar = function(orden, fn){
+		$.post('?mod=cordenentrada&action=aplicar', {
+				"id": orden
+				}, function(data) {
+				if (data.band == 'false'){
+					alert((data.mensaje == '' || data.mensaje == undefined)?"Upps. Ocurrió un error al aplicar la orden: ":data.mensaje);
+					if (fn.error != undefined)
+						fn.error(data);
+				}else
+					if (fn.ok != undefined) fn.ok(data);
+			}, "json"
+		);
+	}
 };

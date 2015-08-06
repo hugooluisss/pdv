@@ -2,7 +2,7 @@
 Class TMovimiento{
 	private $idMovimiento;
 	private $idOrden;
-	protected $item;
+	public $item;
 	private $pu;
 	private $cantidad;
 	private $fecha;
@@ -23,12 +23,24 @@ Class TMovimiento{
 			switch($key){
 				case 'idItem':
 					$this->item = new TItem($val);
+					switch($this->item->getIdTipo()){
+						case 1:
+							$this->item = new TProducto($val);
+						break;
+						case 2:
+							$this->item = new TServicio($val);
+						break;
+					}
 				break;
 				default: $this->$key = $val;
 			}
 		}
 		
 		return true;
+	}
+	
+	public function getId(){
+		return $this->idMovimiento;
 	}
 	
 	public function setOrden($val = ''){
@@ -88,13 +100,13 @@ Class TMovimiento{
 		$db = TBase::conectaDB();
 		
 		if ($this->getId() == ''){
-			$rs = $db->Execute("INSERT INTO movimiento (idMovimiento, idItem, cantidad, pu, fecha) VALUES (null, ".$this->item->getId().", ".$this->getCantidad().", '".$this->getPrecio()."', now());");
+			$rs = $db->Execute("INSERT INTO movimiento (idMovimiento, idOrden, idItem, cantidad, pu, fecha) VALUES (null, ".$this->getOrden().", ".$this->item->getId().", ".$this->getCantidad().", '".$this->getPrecio()."', now());");
 			$this->setId($db->Insert_ID());
 		}
 		
 		$rs = $db->Execute("UPDATE movimiento
 			SET
-				cantidad = '".$this->getCantidd()."',
+				cantidad = '".$this->getCantidad()."',
 				pu = '".$this->getPrecio()."',
 				fecha = now()
 			WHERE idMovimiento = ".$this->getId());
@@ -123,8 +135,8 @@ Class TMovimiento{
 	
 	public function isAplicado(){
 		if ($this->getId() == '') return false;
-		
-		if ($this->aplicado = 'S') return true;
+
+		if ($this->aplicado == 'S') return true;
 		
 		return false;
 	}

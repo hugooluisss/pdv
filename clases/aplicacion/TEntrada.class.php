@@ -1,11 +1,12 @@
 <?php
 include_once("clases/aplicacion/TOrden.class.php");
 Class TEntrada extends TOrden{
-	protected $proveedor;
+	public $proveedor;
 	private $estado;
 	
 	public function TEntrada($orden = ''){
 		$this->estado = 'C';
+		$this->setProveedor();
 		$this->setId($orden);
 	}
 	
@@ -61,18 +62,18 @@ Class TEntrada extends TOrden{
 	public function aplicar(){
 		foreach($this->movimientos as $mov){
 			if (!$mov->isAplicado()){
-				$mov->item->setCantidad($mov->item->getCantidad() + $mov->getCantidad());
+				$mov->item->setExistencias($mov->item->getExistencias() + $mov->getCantidad());
 				switch($mov->item->getIdTipoCosteo()){
 					case 1: #costo mas alto
-						if ($mov->getPU() > $mov->item->getCosto())
-							$mov->item->setCosto($mov->getPU());
+						if ($mov->getPrecio() > $mov->item->getCosto())
+							$mov->item->setCosto($mov->getPrecio());
 					break;
 					case 2:
-						if ($mov->getPU() < $mov->item->getCosto())
-							$mov->item->setCosto($mov->getPU());
+						if ($mov->getPrecio() < $mov->item->getCosto())
+							$mov->item->setCosto($mov->getPrecio());
 					break;
 					case 3:
-						$mov->item->setCosto(($mov->getPU() + $mov->item->getCosto()) / 2);
+						$mov->item->setCosto(($mov->getPrecio() + $mov->item->getCosto()) / 2);
 				}
 				
 				if ($mov->item->guardar())

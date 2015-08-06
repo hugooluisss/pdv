@@ -204,11 +204,11 @@ $conf['corden'] = array(
 		
 /* Entradas */
 $conf['entradas'] = array(
-	#'controlador' => 'servicios.php',
+	'controlador' => 'ordenEntrada.php',
 	'vista' => 'inventario/entradas/panel.tpl',
 	'descripcion' => 'Vista del panel',
 	'seguridad' => true,
-	#'js' => array('servicio.class.js', 'servicios.js'),
+	'js' => array('orden.class.js', 'ordenesEntrada.js'),
 	'capa' => LAYOUT_DEFECTO);
 
 $conf['entradaAdd'] = array(
@@ -222,6 +222,13 @@ $conf['entradaAdd'] = array(
 $conf['cordenentrada'] = array(
 	'controlador' => 'ordenEntrada.php',
 	'descripcion' => 'Controlador de ordenes de entrada',
+	'seguridad' => true,
+	'capa' => LAYOUT_AJAX);
+
+$conf['listaMovimientosEntrada'] = array(
+	'controlador' => 'ordenEntrada.php',
+	'vista' => 'inventario/entradas/movimientos.tpl',
+	'descripcion' => 'Movimientos de orden de entrada',
 	'seguridad' => true,
 	'capa' => LAYOUT_AJAX);
 ?>

@@ -4,13 +4,26 @@
 	</div>
 </div>
 <div class="row">
+	<div class="col-lg-12">
+		<div class="btn-toolbar" role="toolbar">
+			<div class="btn-group btn-group-xs">
+				<button type="button" class="btn btn-primary" action="regresar">Regresar</button>
+			</div>
+			<div class="btn-group btn-group-xs">
+				<button type="button" class="btn btn-danger" action="aplicar">Aplicar</button>
+			</div>
+		</div>
+	</div>
+</div>
+<br />
+<div class="row">
 	<form role="form" id="frmAdd" class="form-horizontal" onsubmit="javascript: return false;">
-		<input type="hidden" id="orden" value=""/>
+		<input type="hidden" id="orden" value="{$orden->getId()}"/>
 		<div class="col-lg-4">
 			<div class="form-group">
 				<label for="txtNumero" class="col-lg-6 control-label">No. Orden / Factura</label>
 				<div class="col-lg-6">
-					<input class="form-control" id="txtNumero" type="text" name="txtNumero" autocomplete="off" autofocus="true" />
+					<input class="form-control" id="txtNumero" type="text" name="txtNumero" autocomplete="off" autofocus="true" value="{$orden->getClave()}"/>
 				</div>
 			</div>
 		</div>
@@ -18,7 +31,7 @@
 			<div class="form-group">
 				<label for="txtProveedor" class="col-lg-3 control-label">Proveedor</label>
 				<div class="col-lg-7">
-					<input class="form-control" id="txtProveedor" type="text" name="txtProveedor" autocomplete="off" autofocus="true" />
+					<input class="form-control" id="txtProveedor" type="text" name="txtProveedor" autocomplete="off" autofocus="true" value="{$orden->proveedor->getNombre()}" idProveedor="{$orden->proveedor->getId()}"/>
 				</div>
 				<div class="col-lg-2">
 					<input id="btnWinProveedor" name="btnWinProveedor" class="btn btn-success btn-md" value="Nuevo" type="button" />
@@ -66,30 +79,7 @@
 </form>
 <br>
 <hr />
-<div class="col-lg-12">
-	<table id="tblMovimientos" class="table table-hover">
-		<thead>
-			<tr>
-				<th>Código</th>
-				<th>Nombre</th>
-				<th>Precio</th>
-				<th></th>
-			</tr>
-		</thead>
-		<tbody>
-			{foreach item=row from=$servicios}
-				<tr>
-					<td>{$row.codigo}</td>
-					<td>{$row.nombre|truncate:50}</td>
-					<td>{$row.precio|default:"0"|string_format:"%0.2f"}</td>
-					<td style="text-align: right">
-						<button type="button" class="btn btn-warning btn-circle" action="modificar" servicio="{$row.encriptado.id}" title="Modificar"><i class="fa fa-pencil"></i></button>
-						<button type="button" class="btn btn-danger btn-circle" action="eliminar" title="Eliminar" servicio="{$row.encriptado.id}"><i class="fa fa-times"></i></button>
-					</td>
-				</tr>
-			{/foreach}
-		</tbody>
-	</table>
+<div class="col-lg-12" id="dvListaMovimientos">
 </div>
 
 <div id="dvProveedor" class="modal fade" role="dialog">

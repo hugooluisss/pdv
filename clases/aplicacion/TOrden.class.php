@@ -46,6 +46,10 @@ Class TOrden{
 		return $this->clave;
 	}
 	
+	public function getFecha(){
+		return $this->fecha;
+	}
+	
 	public function addMovimiento($idItem, $cantidad, $precio){
 		if ($this->getId() == '') return false;
 		
@@ -54,8 +58,10 @@ Class TOrden{
 		$obj->setOrden($this->getId());
 		$obj->setCantidad($cantidad);
 		$obj->setPrecio($precio);
-		if ($obj->guardar())
+		if ($obj->guardar()){
 			$this->movimientos[$obj->getId()] = $obj;
+			return true;
+		}
 		
 		return false;
 	}
@@ -65,7 +71,7 @@ Class TOrden{
 		
 		$obj = new TMovimiento($idMovimiento);
 		if ($obj->eliminar()){
-			un_set($this->movimientos[$idMovimiento]);
+			unset($this->movimientos[$idMovimiento]);
 			return true;
 		}
 		
