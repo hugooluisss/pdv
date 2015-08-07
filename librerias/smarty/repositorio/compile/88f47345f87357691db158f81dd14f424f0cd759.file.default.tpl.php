@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2015-08-04 20:15:13
+<?php /* Smarty version Smarty-3.1.11, created on 2015-08-07 09:52:21
          compiled from "templates/plantillas/layout/default.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:86087753755784df4f34a24-17731746%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '88f47345f87357691db158f81dd14f424f0cd759' => 
     array (
       0 => 'templates/plantillas/layout/default.tpl',
-      1 => 1438737194,
+      1 => 1438959115,
       2 => 'file',
     ),
   ),
@@ -149,6 +149,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                                 <li>
 		                            <a href="?mod=entradas">Entradas</a>
 		                        </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-credit-card fa-fw"></i> Ventas<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="?mod=caja">Caja</a>
+                                </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
