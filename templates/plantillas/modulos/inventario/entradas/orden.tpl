@@ -41,7 +41,7 @@
 	</form>
 </div>
 <br />
-<form role="form" id="frmAdd" class="form-horizontal" onsubmit="javascript: return false;">
+<form role="form" id="frmAdd2" class="form-horizontal" onsubmit="javascript: return false;">
 	<div class="row">
 		<div class="col-lg-12">
 			<div class="form-group">

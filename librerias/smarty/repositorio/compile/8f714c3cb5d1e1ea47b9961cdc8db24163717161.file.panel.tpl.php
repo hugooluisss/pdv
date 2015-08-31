@@ -1,22 +1,22 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2015-08-30 15:34:21
-         compiled from "templates/plantillas/modulos/inventario/entradas/panel.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:180816940955ae7e84c50a36-38420212%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.11, created on 2015-08-30 16:35:01
+         compiled from "templates/plantillas/modulos/inventario/salidas/panel.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:38067554655e376d28f0e45-95317257%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    '4a7e8d30846ff034f3d717960818f632f60e718b' => 
+    '8f714c3cb5d1e1ea47b9961cdc8db24163717161' => 
     array (
-      0 => 'templates/plantillas/modulos/inventario/entradas/panel.tpl',
-      1 => 1439436996,
+      0 => 'templates/plantillas/modulos/inventario/salidas/panel.tpl',
+      1 => 1440970498,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '180816940955ae7e84c50a36-38420212',
+  'nocache_hash' => '38067554655e376d28f0e45-95317257',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_55ae7e84cd2636_11126474',
+  'unifunc' => 'content_55e376d297cc10_22906315',
   'variables' => 
   array (
     'datos' => 0,
@@ -24,9 +24,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_55ae7e84cd2636_11126474')) {function content_55ae7e84cd2636_11126474($_smarty_tpl) {?><div class="row">
+<?php if ($_valid && !is_callable('content_55e376d297cc10_22906315')) {function content_55e376d297cc10_22906315($_smarty_tpl) {?><div class="row">
 	<div class="col-lg-12">
-		<h1 class="page-header">Entradas</h1>
+		<h1 class="page-header">Venta</h1>
 	</div>
 </div>
 <div class="row">
@@ -39,9 +39,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<table id="tblOrdenes" class="table table-hover">
 		<thead>
 			<tr>
+				<th>No</th>
 				<th>Fecha</th>
-				<th>Orden</th>
-				<th>Proveedor</th>
+				<th>Cliente</th>
 				<th></th>
 			</tr>
 		</thead>

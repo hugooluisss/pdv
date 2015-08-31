@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2015-07-04 14:52:25
+<?php /* Smarty version Smarty-3.1.11, created on 2015-08-30 19:50:04
          compiled from "templates/plantillas/modulos/catalogos/clientes/panel.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:3286094735596cad3893d14-50452049%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'aaf617f9d3ce7c0ede9ca04fd39492300bff9bb8' => 
     array (
       0 => 'templates/plantillas/modulos/catalogos/clientes/panel.tpl',
-      1 => 1436039057,
+      1 => 1440982199,
       2 => 'file',
     ),
   ),
@@ -39,6 +39,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<table id="tblClientes" class="table table-hover">
 		<thead>
 			<tr>
+				<th>#</th>
 				<th>Nombre</th>
 				<th>Teléfono</th>
 				<th>email</th>
@@ -52,6 +53,8 @@ foreach ($_from as $_smarty_tpl->tpl_vars['row']->key => $_smarty_tpl->tpl_vars[
 $_smarty_tpl->tpl_vars['row']->_loop = true;
 ?>
 				<tr>
+					<td><?php echo $_smarty_tpl->tpl_vars['row']->value['idCliente'];?>
+</td>
 					<td><?php echo $_smarty_tpl->tpl_vars['row']->value['nombre'];?>
 </td>
 					<td><?php echo (($tmp = @$_smarty_tpl->tpl_vars['row']->value['telefono'])===null||$tmp==='' ? "No se indicó" : $tmp);?>

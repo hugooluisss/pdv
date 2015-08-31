@@ -1,6 +1,6 @@
 <?php
 include_once("clases/aplicacion/TOrden.class.php");
-Class TEntrada extends TOrden{
+class TEntrada extends TOrden{
 	public $proveedor;
 	private $estado;
 	

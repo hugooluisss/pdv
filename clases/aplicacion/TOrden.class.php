@@ -1,5 +1,5 @@
 <?php
-Class TOrden{
+class TOrden{
 	private $idOrden;
 	private $fecha;
 	private $clave;

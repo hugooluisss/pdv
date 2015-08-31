@@ -231,4 +231,30 @@ $conf['listaMovimientosEntrada'] = array(
 	'descripcion' => 'Movimientos de orden de entrada',
 	'seguridad' => true,
 	'capa' => LAYOUT_AJAX);
+	
+/* Salidas */
+#venta
+$conf['caja'] = array(
+	#'controlador' => 'ordenEntrada.php',
+	'vista' => 'inventario/ventas/panel.tpl',
+	'descripcion' => 'Vista del panel',
+	'seguridad' => true,
+	'js' => array('orden.class.js', 'ventas.js'),
+	'capa' => LAYOUT_DEFECTO);
+
+	
+$conf['venta'] = array(
+	'controlador' => 'ventas.php',
+	'vista' => 'inventario/salidas/ventas/orden.tpl',
+	'descripcion' => 'Venta',
+	'seguridad' => true,
+	'js' => array('cliente.class.js', 'producto.class.js', 'orden.class.js', 'venta.js'),
+	'capa' => LAYOUT_DEFECTO);
+	
+$conf['listaMovimientosSalida'] = array(
+	'controlador' => 'ordenEntrada.php',
+	'vista' => 'inventario/salidas/ventas/movimientos.tpl',
+	'descripcion' => 'Movimientos de orden de salida',
+	'seguridad' => true,
+	'capa' => LAYOUT_AJAX);
 ?>

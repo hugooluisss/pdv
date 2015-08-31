@@ -1,30 +1,30 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2015-08-30 15:34:29
-         compiled from "templates/plantillas/modulos/inventario/entradas/movimientos.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:82718942255c373353b7951-78901119%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.11, created on 2015-08-30 22:29:49
+         compiled from "templates/plantillas/modulos/inventario/salidas/ventas/movimientos.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:109792983655e3ca2d13af52-02560862%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    '03d1fc1bac7687cdc7153e02757cb56e83d7a8a5' => 
+    'd9979da70add5abc4e84fac55661c300c36bafba' => 
     array (
-      0 => 'templates/plantillas/modulos/inventario/entradas/movimientos.tpl',
+      0 => 'templates/plantillas/modulos/inventario/salidas/ventas/movimientos.tpl',
       1 => 1439436996,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '82718942255c373353b7951-78901119',
+  'nocache_hash' => '109792983655e3ca2d13af52-02560862',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_55c373354649b7_96243451',
   'variables' => 
   array (
     'datos' => 0,
     'row' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.11',
+  'unifunc' => 'content_55e3ca2d1e9e55_01790509',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_55c373354649b7_96243451')) {function content_55c373354649b7_96243451($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include '/Library/WebServer/Documents/pdv/librerias/smarty/plugins/modifier.truncate.php';
+<?php if ($_valid && !is_callable('content_55e3ca2d1e9e55_01790509')) {function content_55e3ca2d1e9e55_01790509($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include '/Library/WebServer/Documents/pdv/librerias/smarty/plugins/modifier.truncate.php';
 ?><table id="tblMovimientos" class="table table-hover">
 	<thead>
 		<tr>

@@ -13,6 +13,7 @@
 	<table id="tblClientes" class="table table-hover">
 		<thead>
 			<tr>
+				<th>#</th>
 				<th>Nombre</th>
 				<th>Teléfono</th>
 				<th>email</th>
@@ -22,6 +23,7 @@
 		<tbody>
 			{foreach item=row from=$clientes}
 				<tr>
+					<td>{$row.idCliente}</td>
 					<td>{$row.nombre}</td>
 					<td>{$row.telefono|default:"No se indicó"}</td>
 					<td>{$row.email|default:"No se indicó"}</td>

@@ -1,5 +1,5 @@
 <?php
-Class TCliente{
+class TCliente{
 	private $idCliente;
 	private $nombre;
 	private $sexo;

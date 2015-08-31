@@ -1,37 +1,37 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2015-08-30 15:34:21
-         compiled from "templates/plantillas/modulos/inventario/entradas/panel.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:180816940955ae7e84c50a36-38420212%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.11, created on 2015-08-30 17:51:02
+         compiled from "templates/plantillas/modulos/inventario/ventas/panel.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:188636885155e388d6e556e1-39373024%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    '4a7e8d30846ff034f3d717960818f632f60e718b' => 
+    '07208df6fc1b699b35cdfb6d7879106572935a2d' => 
     array (
-      0 => 'templates/plantillas/modulos/inventario/entradas/panel.tpl',
-      1 => 1439436996,
+      0 => 'templates/plantillas/modulos/inventario/ventas/panel.tpl',
+      1 => 1440975061,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '180816940955ae7e84c50a36-38420212',
+  'nocache_hash' => '188636885155e388d6e556e1-39373024',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_55ae7e84cd2636_11126474',
   'variables' => 
   array (
     'datos' => 0,
     'row' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.11',
+  'unifunc' => 'content_55e388d6efaf14_38426903',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_55ae7e84cd2636_11126474')) {function content_55ae7e84cd2636_11126474($_smarty_tpl) {?><div class="row">
+<?php if ($_valid && !is_callable('content_55e388d6efaf14_38426903')) {function content_55e388d6efaf14_38426903($_smarty_tpl) {?><div class="row">
 	<div class="col-lg-12">
-		<h1 class="page-header">Entradas</h1>
+		<h1 class="page-header">Venta</h1>
 	</div>
 </div>
 <div class="row">
 	<div class="col-lg-12">
-		<a href="?mod=entradaAdd"><button type="button" class="btn btn-success btn-circle btn-xl" id="btnAdd"><i class="fa fa-plus"></i></button></a>
+		<a href="?mod=venta"><button type="button" class="btn btn-success btn-circle btn-xl" id="btnAdd"><i class="fa fa-plus"></i></button></a>
 	</div>
 </div>
 <br />
@@ -39,9 +39,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<table id="tblOrdenes" class="table table-hover">
 		<thead>
 			<tr>
+				<th>No</th>
 				<th>Fecha</th>
-				<th>Orden</th>
-				<th>Proveedor</th>
+				<th>Cliente</th>
 				<th></th>
 			</tr>
 		</thead>

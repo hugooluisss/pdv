@@ -12,6 +12,7 @@ switch($objModulo->getId()){
 			$el['nombre'] = $obj->getNombre();
 			$el['telefono'] = $obj->getTelefono();
 			$el['email'] = $obj->getEmail();
+			$el['idCliente'] = $obj->getId();
 			$el['encriptado']['id'] = dechex($obj->getId());
 			
 			array_push($datos, $el);
@@ -38,7 +39,7 @@ switch($objModulo->getId()){
 				$obj->setComentarios($_POST['comentarios']);
 				
 				if ($obj->guardar())
-					echo json_encode(array("band" => "true"));
+					echo json_encode(array("band" => "true", "id" => $obj->getId()));
 				else
 					echo json_encode(array("band" => "false"));
 			break;
@@ -49,6 +50,26 @@ switch($objModulo->getId()){
 					echo json_encode(array("band" => "true"));
 				else
 					echo json_encode(array("band" => "false"));
+			break;
+			case 'autocomplete':
+				$db = TBase::conectaDB();
+				$rs = $db->Execute("select idCliente from cliente where nombre like '%".$_GET['term']."%'");
+				
+				$obj = new TCliente;
+				$datos = array();
+				while(!$rs->EOF){
+					$el = array();
+					
+					$obj->setId($rs->fields['idCliente']);
+					$el['id'] = $obj->getId();
+					$el['label'] = $obj->getNombre();
+					$el['identificador'] = $obj->getId();
+					
+					array_push($datos, $el);
+					$rs->moveNext();
+				}
+				
+				echo json_encode($datos);
 			break;
 		}
 	break;
